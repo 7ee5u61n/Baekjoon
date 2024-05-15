@@ -16,4 +16,3 @@ for _ in range(N):
         banLetter.append(word[i]) # 앞으로 나오지 말아야 할 문자 저장하는 리스트
 
 print(len(word))
-print(banLetter)
