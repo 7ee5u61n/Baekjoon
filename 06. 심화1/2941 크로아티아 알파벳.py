@@ -6,21 +6,11 @@
 # nj 	nj
 # š 	s=
 # ž     z=
+croatian = ['c=','c-','dz=','d-','lj','nj','s=','z=']
+N = str(input()) # 알파벳 입력
 
-croatian = list(str(input())) # 알파벳 소문자와 -, = 입력가능
-count = 0
+for i in croatian:
+    if i in N:
+        N = N.replace(i,' ') # 크로아티아 알파벳이 나오면 단어에서 삭제
 
-for i in range(len(croatian)-1):
-    i += 0
-    if croatian[i] == 'd' and croatian[i+1] == 'z':
-        count = count + 1
-    elif croatian[i] == 'l' and croatian[i+1] == 'j':
-        count = count + 1
-    elif croatian[i] == 'n' and croatian[i+1] == 'j':
-        count = count + 1
-    elif croatian[i] == '-' or croatian[i] == '=':
-        continue
-    else:
-        count = count + 1
-
-print(count)
+print(len(N))
