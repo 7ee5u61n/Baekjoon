@@ -1,8 +1,6 @@
-N = int(input())
+def fact(N):
+    if N > 1:
+        return N * fact(N-1)
+    return 1
 
-result = 1
-for i in range(N-1):
-    result *= N
-    N -= 1
-
-print(result)
+print(fact(int(input())))
