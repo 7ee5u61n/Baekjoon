@@ -1,2 +1,2 @@
-import datetime
-print(str(datetime.datetime.now())[:10])
+print(166)
+print('le2477')
