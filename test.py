@@ -1,6 +1,6 @@
 riding = 0
 most = 0
-for i in range(4):
+for i in range(10):
     off, on = map(int, input().split())
     riding -= off
     riding += on
