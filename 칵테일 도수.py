@@ -10,7 +10,7 @@ for i in range(n):
     denominator += a
 
 volume = round(numerator/denominator, 1)
-alcohol = round(volume*0.01*denominator*0.8)
+alcohol = round(volume*0.01*denominator*0.785)
 
 print('도수: %, 알코올량: g')
 print(volume, alcohol)
