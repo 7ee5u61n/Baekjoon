@@ -1,14 +1,19 @@
-def dfs(graph, start):
+from collections import deque
+
+def bfs(graph, start):
     global count
 
+    q = deque([start])
     visited[start] = True
 
-    for i in graph[start]:
-        if visited[i] == False:
-            visited[i] = True
-            count += 1
-            dfs(graph, i)
-    
+    while q:
+        v = q.popleft()
+        for i in graph[v]:
+            if visited[i] == False:
+                visited[i] = True
+                count += 1
+                q.append(i)
+
     return count
 
 n = int(input())
@@ -24,4 +29,4 @@ for i in range(m):
 
 count = 0
 
-print(dfs(graph, 1))
+print(bfs(graph, 1))
