@@ -32,26 +32,33 @@ while True:
 
     # 다음 머리 위치
     next_head = [head[0]+dx[di], head[1]+dy[di]]
-    
-    # 맵 안
-    if 1 <= next_head[0] <= n and 1 <= next_head[1] <= n:
-        # 사과 먹음
-        if next_head in apples:
-            apples.remove(next_head)
-            tail.appendleft(head)
-            head = next_head
+    # print(apples)
+    # print(f'방향: {di}')
+    # print(f'next_head: {next_head, time}')
+    # print(f'head:{head, time}')
+    # print(f'tail:{tail, time}')
+    tail.appendleft(head)
+    if next_head not in tail:
+        # 맵 안
+        if 1 <= next_head[0] <= n and 1 <= next_head[1] <= n:
+            # 사과 먹음
+            if next_head in apples:
+                # print('eat', time)
+                apples.remove(next_head)
+                head = next_head
+            else:
+                if tail:
+                    tail.pop()
+                head = next_head
+        # 맵 벗어남
         else:
-            if tail:
-                tail.pop()
-            tail.appendleft(head)
-            head = next_head
-        # 꼬리에 닿음
-        if head in tail:
+            # print('맵 벗어남')
             break
-    # 맵 벗어남
+    # 꼬리에 닿음
     else:
+        # print('꼬리 충돌')
         break
-
+        
     # 방향 전환 시간
     if move:
         if time == int(move[0][0]):
