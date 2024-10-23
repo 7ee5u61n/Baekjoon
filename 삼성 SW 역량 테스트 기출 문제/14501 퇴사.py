@@ -1,18 +1,18 @@
+# 남은 퇴사일
 n = int(input())
+t = [0]*(n)
+p = [0]*(n)
 
-schedule = []
+# 상담 시간, 금액
 for i in range(n):
-    # 상담 기간, 금액
-    t, p = map(int, input().split())
-    schedule.append([t,p])
+    t[i], p[i] = map(int, input().split())
 
 d = [0]*(n+1)
+
 for i in range(n-1, -1, -1):
-    day = schedule[i][0]
-    price = schedule[i][1]
-    if i+schedule[i][0] <= n:
-        d[i] = max(d[i+1], d[i+day]+price)
+    if i+t[i] <= n:
+        d[i] = max(d[i+1], d[i+t[i]]+p[i])
     else:
-        d[i] = d[i+1]
+        d[i]=d[i+1]
 
 print(d[0])
