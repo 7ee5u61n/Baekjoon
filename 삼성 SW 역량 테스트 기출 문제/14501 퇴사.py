@@ -1,18 +1,20 @@
-# 남은 퇴사일
+def dfs(day, earn):
+    global max_earn
+    
+    # 날짜 지남
+    if day >= n:
+        max_earn = max(earn, max_earn)
+        return
+    
+    if day+plan[day][0] <= n:
+        dfs(day+plan[day][0], earn+plan[day][1])
+    
+    dfs(day+1, earn)
+
 n = int(input())
-t = [0]*(n)
-p = [0]*(n)
+plan = [list(map(int, input().split())) for _ in range(n)]
 
-# 상담 시간, 금액
-for i in range(n):
-    t[i], p[i] = map(int, input().split())
+max_earn = 0
+dfs(0, 0)
 
-d = [0]*(n+1)
-
-for i in range(n-1, -1, -1):
-    if i+t[i] <= n:
-        d[i] = max(d[i+1], d[i+t[i]]+p[i])
-    else:
-        d[i]=d[i+1]
-
-print(d[0])
+print(max_earn)
