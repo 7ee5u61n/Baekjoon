@@ -1,13 +1,27 @@
-h1, m1, s1 = map(int, input().split(':'))
-h2, m2, s2 = map(int, input().split(':'))
+import sys
 
-total = h2*3600+m2*60+s2 - (h1*3600+m1*60+s1)
 
-if total < 0:
-    total += 60*60*24
+n, k = map(int, sys.stdin.readline().split())
+board = {}
 
-hour = total // 3600
-min = total%3600//60
-sec = total%60
+dx = [2, -2, 0, 0]
+dy = [0, 0, 2, -2]
+for _ in range(k):
+    x, y = map(int, sys.stdin.readline().split())
+    board[(x, y)] = -1
 
-print("%02d:%02d:%02d" % (hour, min, sec))
+    for i in range(4):
+        nx = x + dx[i]
+        ny = y + dy[i]
+        if 0 <= nx <= n and 0 <= ny <= n:
+            if (nx, ny) in board and board[(nx, ny)] == -1:
+                continue
+            else:
+                board[(nx, ny)] = 1
+
+count = 0
+for x, y in board.items():
+    if y != -1:
+        count += 1
+
+print(count)
