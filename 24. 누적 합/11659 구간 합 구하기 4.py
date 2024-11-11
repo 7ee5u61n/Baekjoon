@@ -1,12 +1,13 @@
-N, M = map(int, input().split()) # N = 수의 개수, M = 구해야 하는 횟수
-numbers = list(map(int, input().split())) # N개의 수
-sum = [0]
-temp = 0
+import sys
+input = sys.stdin.readline
 
-for i in numbers:
-    temp += i
-    sum.append(temp)
+n, m = map(int, input().split())
+arr = list(map(int, input().split()))
 
-for _ in range(M):
+dp = [0]*(n+1)
+for k in range(1, n+1):
+    dp[k] = dp[k-1] + arr[k-1]
+
+for _ in range(m):
     i, j = map(int, input().split())
-    print(sum[j] - sum[i-1])
+    print(dp[j]-dp[i-1])
