@@ -1,11 +1,18 @@
-n, m = map(int, input().split())
-maps = [list(map(int, input().split())) for _ in range(n)]
+n = int(input())
+sell = {}
+for _ in range(n):
+    book = str(input())
+    if book in sell:
+        sell[book] += 1
+    else:
+        sell[book] = 1
 
-taxi = []
-for i in range(n):
-    for j in range(m):
-        if maps[i][j] == 1:
-            taxi.append((i, j))
+bestSeller = []
 
-distance = abs(taxi[1][0] - taxi[0][0]) + abs(taxi[1][1] - taxi[0][1])
-print(distance)
+for key, value in sell.items():
+    if value == max(sell.values()):
+        bestSeller.append(key)
+
+bestSeller.sort()
+
+print(bestSeller[0])
