@@ -1,10 +1,11 @@
-n = int(input())
-people = [list(map(int, input().split())) for _ in range(n)]
+n, m = map(int, input().split())
+maps = [list(map(int, input().split())) for _ in range(n)]
 
-rank = 1
-for i in people:
-    rank = 1
-    for j in people:
-        if i[0] < j[0] and i[1] < j[1]:
-            rank += 1
-    print(rank, end=' ')
+taxi = []
+for i in range(n):
+    for j in range(m):
+        if maps[i][j] == 1:
+            taxi.append((i, j))
+
+distance = abs(taxi[1][0] - taxi[0][0]) + abs(taxi[1][1] - taxi[0][1])
+print(distance)
