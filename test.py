@@ -1,18 +1,11 @@
-n = int(input())
-sell = {}
-for _ in range(n):
-    book = str(input())
-    if book in sell:
-        sell[book] += 1
-    else:
-        sell[book] = 1
+N, K = map(int, input().split())
 
-bestSeller = []
+count = 0
+for i in range(N+1):
+    for j in range(60):
+        for k in range(60):
+            time = str(i).zfill(2) + str(j).zfill(2) + str(k).zfill(2)
+            if str(K) in time:
+                count += 1
 
-for key, value in sell.items():
-    if value == max(sell.values()):
-        bestSeller.append(key)
-
-bestSeller.sort()
-
-print(bestSeller[0])
+print(count)
