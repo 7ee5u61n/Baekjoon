@@ -1,14 +1,12 @@
-def calcArea(a, b, c, d):
-    return ((c-a)+(d-b))*2
+import math
 
 n = int(input())
-a, b, c, d = map(int, input().split())
-print(calcArea(a, b, c, d))
+fileSizes = list(map(int, input().split()))
+cluster = int(input())
 
-for _ in range(n-1):
-    newA, newB, newC, newD = map(int, input().split())
-    a = min(a, newA)
-    b = min(b, newB)
-    c = max(c, newC)
-    d = max(d, newD)
-    print(calcArea(a,b,c,d))
+disk = 0
+
+for file in fileSizes:
+    disk += cluster*(math.ceil(file/cluster))
+    
+print(disk)
