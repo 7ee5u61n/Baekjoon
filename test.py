@@ -1,13 +1,6 @@
-import math
+direction = ['N', 'E', 'S', 'W']
+di = 0
+for _ in range(10):
+    di = (di+int(input()))%4
 
-n = int(input())
-m = int(input())
-x = list(map(int, input().split()))
-
-result = x[0]
-for i in range(1, m):
-    value = math.ceil((x[i]-x[i-1])/2)
-    result = max(result, value)
-result = max(result, n-x[-1])
-
-print(result)
+print(direction[di])
