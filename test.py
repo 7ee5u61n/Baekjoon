@@ -1,6 +1,10 @@
-direction = ['N', 'E', 'S', 'W']
-di = 0
-for _ in range(10):
-    di = (di+int(input()))%4
+n = int(input())
+word = str(input())
 
-print(direction[di])
+while True:
+    if 'PS4' in word or 'PS5' in word:
+        word = word.replace('PS4', 'PS').replace('PS5', 'PS')
+    else:
+        break
+
+print(word)
