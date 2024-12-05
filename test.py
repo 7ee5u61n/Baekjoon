@@ -1,10 +1,12 @@
-n = int(input())
-word = str(input())
+n, m = input().split()
 
-while True:
-    if 'PS4' in word or 'PS5' in word:
-        word = word.replace('PS4', 'PS').replace('PS5', 'PS')
-    else:
-        break
+player = set()
+for _ in range(int(n)):
+    player.add(str(input()))
 
-print(word)
+if m == 'Y':
+    print(len(player))
+elif m == 'F':
+    print(len(player)//2)
+else:
+    print(len(player)//3)
