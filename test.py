@@ -1,12 +1,14 @@
-n, m = input().split()
+n = int(input())
 
-player = set()
-for _ in range(int(n)):
-    player.add(str(input()))
+topping = list(map(str, input().split()))
+cheese = set()
 
-if m == 'Y':
-    print(len(player))
-elif m == 'F':
-    print(len(player)//2)
+for i in topping:
+    if len(i) >= 6:
+        if i[-6:] == 'Cheese':
+            cheese.add(i)
+
+if len(cheese) >= 4:
+    print('yummy')
 else:
-    print(len(player)//3)
+    print('sad')
