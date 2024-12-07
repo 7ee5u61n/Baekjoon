@@ -1,14 +1,8 @@
-n = int(input())
+def intergration(x, a, b, c, d, e):
+    return (((a*x**3)//3) + ((b*x**2)//2) + (c*x)) - (((d*x**2)//2) + (e*x))
 
-topping = list(map(str, input().split()))
-cheese = set()
+x1, x2 = map(int, input().split())
+a, b, c, d, e = map(int, input().split())
 
-for i in topping:
-    if len(i) >= 6:
-        if i[-6:] == 'Cheese':
-            cheese.add(i)
-
-if len(cheese) >= 4:
-    print('yummy')
-else:
-    print('sad')
+power = intergration(x2, a, b, c, d, e) - intergration(x1, a, b, c, d, e)
+print(power)
