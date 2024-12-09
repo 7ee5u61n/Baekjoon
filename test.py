@@ -1,13 +1,21 @@
-n = int(input())
-height = list(map(int, input().split()))
+def block(h):
+    count = 0
+    for i in range(n):
+        if i < h:
+            if tower[i] != (tower[h]-(h-i)*k):
+                count += 1
+        elif i > h:
+            if tower[i] != (tower[h]+(i-h)*k):
+                count += 1
+    return count
+        
 
-max_upper = 0
-upper = 0
-for i in range(n-1):
-    if height[i] < height[i+1]:
-        upper += height[i+1]-height[i]
-    else:
-        upper = 0
-    max_upper = max(upper, max_upper)
+n, k = map(int, input().split())
+tower = list(map(int, input().split()))
 
-print(max_upper)
+result = 1000
+for i in range(n):
+    if tower[i] > i*k:
+        result = min(result, block(i))
+
+print(result)
