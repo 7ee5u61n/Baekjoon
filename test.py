@@ -1,11 +1,25 @@
-n = int(input())
-slime = list(map(int, input().split()))
+s = str(input())
 
-slime.sort(reverse=True)
+sm = 0
+count = 0
+for i in s:
+    if i == '+':
+        sm += 0.5
+    else:
+        if i == 'A':
+            sm += 4.0
+            count += 1
+        elif i == 'B':
+            sm += 3.0
+            count += 1
+        elif i == 'C':
+            sm += 2.0
+            count += 1
+        elif i == 'D':
+            sm += 1.0
+            count += 1
+        elif i == 'F':
+            count += 1
 
-score = 0
-for i in range(n-1):
-    score += slime[i]*slime[i+1]
-    slime[i+1] += slime[i]
-
-print(score)
+avg = sm/count
+print(avg)
