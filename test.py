@@ -1,25 +1,20 @@
-s = str(input())
+order = str(input())
 
-sm = 0
-count = 0
-for i in s:
-    if i == '+':
-        sm += 0.5
-    else:
-        if i == 'A':
-            sm += 4.0
-            count += 1
-        elif i == 'B':
-            sm += 3.0
-            count += 1
-        elif i == 'C':
-            sm += 2.0
-            count += 1
-        elif i == 'D':
-            sm += 1.0
-            count += 1
-        elif i == 'F':
-            count += 1
+robot = 0
+box = 0
+goal = 0
 
-avg = sm/count
-print(avg)
+for i in range(len(order)):
+    if order[i] == '@':
+        robot = i
+    elif order[i] == '#':
+        box = i
+    elif order[i] == '!':
+        goal = i
+
+if robot < box < goal:
+    print(goal - robot - 1)
+elif robot > box > goal:
+    print(robot - goal - 1)
+else:
+    print(-1)
