@@ -1,12 +1,15 @@
-n, p = map(int, input().split())
+h, w = map(int, input().split())
+weather = [list(input()) for _ in range(h)]
 
-arr = []
-value = n
-while True:
-    value = (value*n)%p
-    if value in arr:
-        break
-    else:
-        arr.append(value)
+cloud = [[-1]*w for _ in range(h)]
 
-print(len(arr) - arr.index(value))
+for i in range(h):
+    for j in range(w):
+        if weather[i][j] == 'c':
+            for k in range(w-j):
+                cloud[i][j+k] = k
+
+for i in range(h):
+    for j in range(w):
+        print(cloud[i][j], end=' ')
+    print('')
