@@ -1,15 +1,15 @@
-h, w = map(int, input().split())
-weather = [list(input()) for _ in range(h)]
+from collections import deque
+import queue
 
-cloud = [[-1]*w for _ in range(h)]
+s = str(input())
+n = int(input())
 
-for i in range(h):
-    for j in range(w):
-        if weather[i][j] == 'c':
-            for k in range(w-j):
-                cloud[i][j+k] = k
-
-for i in range(h):
-    for j in range(w):
-        print(cloud[i][j], end=' ')
-    print('')
+count = 0
+for _ in range(n):
+    ring = (str(input())*2)
+    for i in range(len(ring)):
+        if ring[i:i+len(s)] == s:
+            count += 1
+            break
+        
+print(count)
