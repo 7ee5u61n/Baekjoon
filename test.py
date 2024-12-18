@@ -1,15 +1,21 @@
-n = int(input())
-arr = list(map(int, input().split()))
-arr.sort()
+score = list(map(int, input().split()))
+score.sort(reverse=True)
 
-prime = 10000
-least = 20000*10000
-for i in range(n):
-    sm = 0
-    for j in range(n):
-        sm += abs(arr[i]-arr[j])
-    if sm < least:
-        least = sm
-        prime = arr[i]
+hongik = int(input())
 
-print(prime)
+rank = score.index(hongik) + 1
+
+if 1 <= rank <= 5:
+    print('A+')
+elif 6 <= rank <= 15:
+    print('A0')
+elif 16 <= rank <= 30:
+    print('B+')
+elif 31 <= rank <= 35:
+    print('B0')
+elif 36 <= rank <= 45:
+    print('C+')
+elif 46 <= rank <= 48:
+    print('C0')
+else:
+    print('F')
