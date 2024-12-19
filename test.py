@@ -1,21 +1,21 @@
-score = list(map(int, input().split()))
-score.sort(reverse=True)
+yeondu = str(input())
+n = int(input())
 
-hongik = int(input())
+team = []
+for _ in range(n):
+    team.append(str(input()))
+team.sort()
 
-rank = score.index(hongik) + 1
+most = 0
+winner = team[0]
+for i in range(n):
+    L = yeondu.count('L') + team[i].count('L')
+    O = yeondu.count('O') + team[i].count('O')
+    V = yeondu.count('V') + team[i].count('V')
+    E = yeondu.count('E') + team[i].count('E')
+    win = ((L+O) * (L+V) * (L+E) * (O+V) * (O+E) * (V+E)) % 100
+    if win > most:
+        most = win
+        winner = team[i]
 
-if 1 <= rank <= 5:
-    print('A+')
-elif 6 <= rank <= 15:
-    print('A0')
-elif 16 <= rank <= 30:
-    print('B+')
-elif 31 <= rank <= 35:
-    print('B0')
-elif 36 <= rank <= 45:
-    print('C+')
-elif 46 <= rank <= 48:
-    print('C0')
-else:
-    print('F')
+print(winner)
