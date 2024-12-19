@@ -1,21 +1,26 @@
-yeondu = str(input())
-n = int(input())
+r, c = map(int, input().split())
 
-team = []
-for _ in range(n):
-    team.append(str(input()))
-team.sort()
+arr = [list(input()) for _ in range(10)]
 
-most = 0
-winner = team[0]
-for i in range(n):
-    L = yeondu.count('L') + team[i].count('L')
-    O = yeondu.count('O') + team[i].count('O')
-    V = yeondu.count('V') + team[i].count('V')
-    E = yeondu.count('E') + team[i].count('E')
-    win = ((L+O) * (L+V) * (L+E) * (O+V) * (O+E) * (V+E)) % 100
-    if win > most:
-        most = win
-        winner = team[i]
+bomb = []
+for i in range(10):
+    for j in range(10):
+        if arr[i][j] == 'o':
+            bomb.append((i, j))
 
-print(winner)
+for i, j in bomb:
+    for k in range(10):
+        arr[i][k] = 'o'
+        arr[k][j] = 'o'
+
+safe = []
+for i in range(10):
+    for j in range(10):
+        if arr[i][j] == 'x':
+            safe.append((i+1, j+1))
+
+min_move = 100
+for i, j in safe:
+    min_move = min(abs(r-i)+abs(c-j), min_move)
+
+print(min_move)
