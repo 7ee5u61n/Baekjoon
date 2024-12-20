@@ -1,26 +1,22 @@
-r, c = map(int, input().split())
+cu, du = map(int, input().split())
+cd, dd = map(int, input().split())
+cp, dp = map(int, input().split())
+h = int(input())
 
-arr = [list(input()) for _ in range(10)]
-
-bomb = []
-for i in range(10):
-    for j in range(10):
-        if arr[i][j] == 'o':
-            bomb.append((i, j))
-
-for i, j in bomb:
-    for k in range(10):
-        arr[i][k] = 'o'
-        arr[k][j] = 'o'
-
-safe = []
-for i in range(10):
-    for j in range(10):
-        if arr[i][j] == 'x':
-            safe.append((i+1, j+1))
-
-min_move = 100
-for i, j in safe:
-    min_move = min(abs(r-i)+abs(c-j), min_move)
-
-print(min_move)
+time = 0
+while True:
+    if time == 0:
+        h -= (du+dd+dp)
+    else:
+        if time%cu == 0:
+            h -= du
+        if time%cd == 0:
+            h -= dd
+        if time%cp == 0:
+            h -= dp
+    if h <= 0:
+        break
+    else:
+        time += 1
+        
+print(time)
