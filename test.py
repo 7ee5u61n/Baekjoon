@@ -1,22 +1,14 @@
-cu, du = map(int, input().split())
-cd, dd = map(int, input().split())
-cp, dp = map(int, input().split())
-h = int(input())
+n = int(input())
+student = []
+for _ in range(n):
+    student.append(''.join(reversed(str(input()))))
 
-time = 0
-while True:
-    if time == 0:
-        h -= (du+dd+dp)
-    else:
-        if time%cu == 0:
-            h -= du
-        if time%cd == 0:
-            h -= dd
-        if time%cp == 0:
-            h -= dp
-    if h <= 0:
+word = len(student[0])
+for i in range(1, word+1):
+    number = []
+    for j in range(n):
+        number.append((student[j])[:i])
+    if len(number) == len(list(set(number))):
         break
-    else:
-        time += 1
-        
-print(time)
+
+print(i)
