@@ -1,14 +1,22 @@
-n, k = map(int, input().split())
-a = list(map(int, input().split()))
+l, r, a = map(int, input().split())
 
-outlet = 0
-for i in range(k):
-    if a[i] % 2 == 0:
-        outlet += a[i]//2
-    else:
-        outlet += a[i]//2+1
-        
-if outlet >= n:
-    print('YES')
-else:
-    print('NO')
+# 왼발, 오른발 같을 때 까지
+while l != r:
+    if l > r:
+        # 양발 있으면
+        if a:
+            a -= 1
+            r += 1
+        # 없으면
+        else:
+            l -= 1
+    elif l < r:
+        if a:
+            a -= 1
+            l += 1
+        else:
+            r -= 1
+if a % 2 == 1:
+    a -= 1
+
+print(l+r+a)
