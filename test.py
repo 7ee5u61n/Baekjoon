@@ -1,13 +1,14 @@
-n = int(input())
-changyeong = 100
-sangdeok = 100
+n, k = map(int, input().split())
+a = list(map(int, input().split()))
 
-for _ in range(n):
-    a, b = map(int, input().split())
-    if a < b:
-        changyeong -= b
-    elif a > b:
-        sangdeok -= a
-
-print(changyeong)
-print(sangdeok)
+outlet = 0
+for i in range(k):
+    if a[i] % 2 == 0:
+        outlet += a[i]//2
+    else:
+        outlet += a[i]//2+1
+        
+if outlet >= n:
+    print('YES')
+else:
+    print('NO')
