@@ -1,17 +1,15 @@
-ab = str(input())
+cal = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31]
 
-if len(ab) == 2:
-    a = int(ab[0])
-    b = int(ab[1])
-elif len(ab) == 4:
-    a = int(ab[0:2])
-    b = int(ab[2:4])
-else:
-    if ab[-1] == '0':
-        a = int(ab[0])
-        b = int(ab[1:3])
-    else:
-        a = int(ab[0:2])
-        b = int(ab[2])
-        
-print(a+b)
+while True:
+    day, month, year = map(int, input().split())
+    if day == 0 and month == 0 and year == 0:
+        break
+
+    count = 0
+    count += sum(cal[:month-1])
+    # 윤년
+    if (year % 4 == 0 and year % 100 != 0 and month > 2) or year % 400 == 0:
+        count += 1
+    count += day
+
+    print(count)
