@@ -1,15 +1,11 @@
-cal = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31]
+T = int(input())
+for _ in range(T):
+    n, m, k, d = map(int, input().split())
 
-while True:
-    day, month, year = map(int, input().split())
-    if day == 0 and month == 0 and year == 0:
-        break
+    b = 2*d//(n*m*(m-1)*k + n*(n-1)*m*m)
 
-    count = 0
-    count += sum(cal[:month-1])
-    # 윤년
-    if (year % 4 == 0 and year % 100 != 0 and month > 2) or year % 400 == 0:
-        count += 1
-    count += day
-
-    print(count)
+    if b:
+        game = n*m*(m-1)*k*b//2 + n*(n-1)*m*m*b//2
+        print(game)
+    else:
+        print(-1)
