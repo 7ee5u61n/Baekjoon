@@ -1,11 +1,19 @@
-T = int(input())
-for _ in range(T):
-    n, m, k, d = map(int, input().split())
+n = int(input())
+text = list(str(input()) for _ in range(n))
 
-    b = 2*d//(n*m*(m-1)*k + n*(n-1)*m*m)
+number = []
+for i in range(n):
+    num = ''
+    for j in range(len(text[i])):
+        if text[i][j].isnumeric():
+            num += text[i][j]
+        else:
+            if num:
+                number.append(int(num))
+            num = ''
+    if num:
+        number.append(int(num))
 
-    if b:
-        game = n*m*(m-1)*k*b//2 + n*(n-1)*m*m*b//2
-        print(game)
-    else:
-        print(-1)
+number.sort()
+for i in number:
+    print(i)
