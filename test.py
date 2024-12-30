@@ -1,3 +1,18 @@
 a, b, c = map(int, input().split())
 
-print(max(b-a-1, c-b-1))
+if a+b == c:
+    print(str(a)+'+'+str(b)+'='+str(c))
+elif a-b == c:
+    print(str(a)+'-'+str(b)+'='+str(c))
+elif a*b == c:
+    print(str(a)+'*'+str(b)+'='+str(c))
+elif a//b == c:
+    print(str(a)+'/'+str(b)+'='+str(c))
+elif b+c == a:
+    print(str(a)+'='+str(b)+'+'+str(c))
+elif b-c == a:
+    print(str(a)+'='+str(b)+'-'+str(c))
+elif b*c == a:
+    print(str(a)+'='+str(b)+'*'+str(c))
+elif b//c == a:
+    print(str(a)+'='+str(b)+'/'+str(c))
