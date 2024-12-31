@@ -1,18 +1,16 @@
-a, b, c = map(int, input().split())
+n = int(input())
+arr = list(map(str, input().split('*')))
 
-if a+b == c:
-    print(str(a)+'+'+str(b)+'='+str(c))
-elif a-b == c:
-    print(str(a)+'-'+str(b)+'='+str(c))
-elif a*b == c:
-    print(str(a)+'*'+str(b)+'='+str(c))
-elif a//b == c:
-    print(str(a)+'/'+str(b)+'='+str(c))
-elif b+c == a:
-    print(str(a)+'='+str(b)+'+'+str(c))
-elif b-c == a:
-    print(str(a)+'='+str(b)+'-'+str(c))
-elif b*c == a:
-    print(str(a)+'='+str(b)+'*'+str(c))
-elif b//c == a:
-    print(str(a)+'='+str(b)+'/'+str(c))
+left = arr[0]
+right = arr[1]
+
+for _ in range(n):
+    name = str(input())
+
+    if len(name) < len(left)+len(right):
+        print('NE')
+    else:
+        if name[:len(left)] == left and name[-len(right):] == right:
+            print('DA')
+        else:
+            print('NE')
