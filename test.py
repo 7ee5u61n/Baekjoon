@@ -1,17 +1,15 @@
-n, m = map(int, input().split())
-candidate = list(input() for _ in range(n))
+T = int(input())
+for _ in range(T):
+    m, p = input().split()
 
-result = 0
-for i in candidate:
-    o = 0
-    x = 0
-    for j in i:
-        if j == 'O':
-            o += 1
-        else:
-            x += 1
+    if p == 'C':
+        arr = list(map(str, input().split()))
+        for i in arr:
+            print(ord(i)-64, end=' ')
+        print('')
 
-    if o > x:
-        result += 1
-
-print(result)
+    else:
+        arr = list(map(int, input().split()))
+        for i in arr:
+            print(chr(i+64), end=' ')
+        print('')
