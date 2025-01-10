@@ -1,15 +1,20 @@
 T = int(input())
 for _ in range(T):
-    m, p = input().split()
+    n = str(input())
+    
+    count = 0
+    while n != '6174':
+        count += 1
+        arr = []
+        for i in n:
+            arr.append(i)
+        
+        mx = int(''.join(sorted(arr, reverse=True)))
+        mn = int(''.join(sorted(arr)))
 
-    if p == 'C':
-        arr = list(map(str, input().split()))
-        for i in arr:
-            print(ord(i)-64, end=' ')
-        print('')
-
-    else:
-        arr = list(map(int, input().split()))
-        for i in arr:
-            print(chr(i+64), end=' ')
-        print('')
+        if mx-mn < 1000:
+            n = '0' + str(mx-mn)
+        else:
+            n = str(mx-mn)
+    
+    print(count)
