@@ -1,20 +1,14 @@
-T = int(input())
-for _ in range(T):
-    n = str(input())
-    
-    count = 0
-    while n != '6174':
-        count += 1
-        arr = []
-        for i in n:
-            arr.append(i)
-        
-        mx = int(''.join(sorted(arr, reverse=True)))
-        mn = int(''.join(sorted(arr)))
+n = int(input())
+for _ in range(n):
+    m = int(input())
+    mission = []
+    for _ in range(m):
+        mission.append(list(map(int, input().split())))
+    k, d, a = map(int, input().split())
 
-        if mx-mn < 1000:
-            n = '0' + str(mx-mn)
-        else:
-            n = str(mx-mn)
-    
-    print(count)
+    donation = 0
+    for K, D, A in mission:
+        if (K*k)-(D*d)+(A*a) >= 0:
+            donation += (K*k)-(D*d)+(A*a)
+        
+    print(donation)
