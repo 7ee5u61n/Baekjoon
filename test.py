@@ -1,14 +1,11 @@
-n = int(input())
-for _ in range(n):
-    m = int(input())
-    mission = []
-    for _ in range(m):
-        mission.append(list(map(int, input().split())))
-    k, d, a = map(int, input().split())
+import itertools
 
-    donation = 0
-    for K, D, A in mission:
-        if (K*k)-(D*d)+(A*a) >= 0:
-            donation += (K*k)-(D*d)+(A*a)
-        
-    print(donation)
+n = int(input())
+k = int(input())
+card = list(str(input()) for _ in range(n))
+
+result = set()
+for i in itertools.permutations(card, k):
+    result.add(''.join(i))
+
+print(len(result))
