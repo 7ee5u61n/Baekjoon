@@ -1,21 +1,18 @@
-a = str(input())
-b = str(input())
+import math
 
-stroke = [3, 2, 1, 2, 3, 3, 2, 3, 3, 2, 2, 1, 2, 2, 1, 2, 2, 2, 1, 2, 1, 1, 1, 2, 2, 1]
+test_case = 1
+while True:
+    arr = list(map(int, input().split()))
+    if arr[0] == 0:
+        break
+    
+    r = arr[0]
+    w = arr[1]
+    l = arr[2]
 
-number = ''
-for i in range(len(a)):
-    number += str(stroke[ord(a[i])-65])
-    number += str(stroke[ord(b[i])-65])
+    if math.sqrt(w**2+l**2)/2 <= r:
+        print(f'Pizza {test_case} fits on the table.')
+    else:
+        print(f'Pizza {test_case} does not fit on the table.')
 
-
-for i in range(len(a)*2-2):
-    now = ''
-    for j in range(len(number)-1):
-        if int(number[j]) + int(number[j+1]) >= 10:
-            now += str(int(number[j]) + int(number[j+1]) - 10)
-        else:
-            now += str(int(number[j]) + int(number[j+1]))
-    number = now
-
-print(number)
+    test_case += 1
