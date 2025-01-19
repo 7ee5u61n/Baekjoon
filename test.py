@@ -1,15 +1,22 @@
 while True:
-    s = str(input())
-    if s == '0':
+    g, t, a, d = map(int, input().split())
+
+    if g == -1 and a == -1 and t == -1 and d == -1:
         break
     
-    print(s, end=' ')
-    while len(s) > 1:
-        value = 1
-        for i in s:
-            value *= int(i)
-        s = str(value)
+    x, y = 0, 0
 
-        print(s, end=' ')
+    # 조별 리그
+    group_match = t*(t-1)//2*g
+    x += group_match
 
-    print('')
+    # 토너먼트 진출 팀 수
+    tournament = g*a+d
+
+    value = 1
+    while tournament > value:
+        x += value
+        value *= 2
+    y += value-tournament
+    
+    print(f'{g}*{a}/{t}+{d}={x}+{y}')
