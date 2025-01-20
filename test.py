@@ -1,22 +1,11 @@
-while True:
-    g, t, a, d = map(int, input().split())
+n = str(input())
+if len(n) % 3 == 1:
+    n = '00' + n
+elif len(n) % 3 == 2:
+    n = '0' + n
 
-    if g == -1 and a == -1 and t == -1 and d == -1:
-        break
-    
-    x, y = 0, 0
+number = ''
+for i in range(0, len(n), 3):
+    number += str(int(n[i])*4 + int(n[i+1])*2 + int(n[i+2]))
 
-    # 조별 리그
-    group_match = t*(t-1)//2*g
-    x += group_match
-
-    # 토너먼트 진출 팀 수
-    tournament = g*a+d
-
-    value = 1
-    while tournament > value:
-        x += value
-        value *= 2
-    y += value-tournament
-    
-    print(f'{g}*{a}/{t}+{d}={x}+{y}')
+print(number)
