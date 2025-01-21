@@ -1,11 +1,8 @@
-n = str(input())
-if len(n) % 3 == 1:
-    n = '00' + n
-elif len(n) % 3 == 2:
-    n = '0' + n
+a, b = map(int, input().split())
 
-number = ''
-for i in range(0, len(n), 3):
-    number += str(int(n[i])*4 + int(n[i+1])*2 + int(n[i+2]))
+if a <= b:
+    b = a-1
+elif a > b:
+    a = b+1
 
-print(number)
+print(a+b)
