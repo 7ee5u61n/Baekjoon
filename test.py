@@ -1,8 +1,11 @@
-a, b = map(int, input().split())
+dp = [1]*31
 
-if a <= b:
-    b = a-1
-elif a > b:
-    a = b+1
+for i in range(30):
+    dp[i+1] = dp[i]*2
 
-print(a+b)
+n = int(input())
+
+if n in dp:
+    print(1)
+else:
+    print(0)
