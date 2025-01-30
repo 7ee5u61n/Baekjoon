@@ -1,5 +1,4 @@
-n, m = map(int, input().split())
-if n == m:
-    print(1)
-else:
-    print(0)
+s = str(input())
+
+for i in range(len(s)):
+    print(i)
