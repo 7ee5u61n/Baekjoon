@@ -1,15 +1,20 @@
-s = str(input())
-count = 0
-number = s[0]
-for i in range(1, len(s)):
-    if int(s[i]) - int(s[i-1]) == 1:
-        number += s[i]
-    else:
-        if len(number) == 3:
-            count += 1
-        number = s[i]
+n, m = map(int, input().split())
+bottom = input()
 
-if len(number) == 3:
-    count += 1
+able = True
+for i in range(n-1):
+    top = input()
+    able = False
+    for j in range(1, m+1):
+        if top[m-j:] == bottom[:j] or top[:j] == bottom[m-j:]:
+            bottom = top
+            able = True
+            break
 
-print(count)
+    if not able:
+        break
+    
+if able:
+    print(1)
+else:
+    print(0)
