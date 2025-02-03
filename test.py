@@ -1,10 +1,14 @@
-n = int(input())
-
-dairy = list(int(input()) for _ in range(n))
-dairy.sort(reverse=True)
-
-for i in range(n):
-    if i % 3 == 2:
-        dairy[i] = 0
-
-print(sum(dairy))
+n, m = map(int, input().split())
+box = 0
+if n:
+    book = list(map(int, input().split()))
+    box = 1
+    weight = 0
+    for i in range(n):
+        if book[i] + weight <= m:
+            weight += book[i]
+        else:
+            weight = book[i]
+            box += 1
+    
+print(box)
