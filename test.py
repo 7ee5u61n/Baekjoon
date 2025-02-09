@@ -1,23 +1,13 @@
-x, y = map(int, input().split())
-row = [0, x]
-column = [0, y]
-
 n = int(input())
-for _ in range(n):
-    a, b = map(int, input().split())
-    if a == 0:
-        column.append(b)
-    else:
-        row.append(b)
+file = [input() for _ in range(n)]
 
-row.sort()
-column.sort()
-
-result = 0
-for i in range(1, len(row)):
-    for j in range(1, len(column)):
-        width = row[i] - row[i-1]
-        height = column[j] - column[j-1]
-        result = max(result, width*height)
+result = ''
+for i in range(len(file[0])):
+    temp = file[0][i]
+    for j in range(1, n):
+        if file[j][i] != temp:
+            temp = '?'
+            break
+    result += temp
 
 print(result)
