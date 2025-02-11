@@ -1,9 +1,11 @@
-n, m = map(int, input().split())
-name = ''
-m -= 1
-if m // 26:
-    name = chr(m//26+96)+chr(m%26+97)
-else:
-    name = chr(m%26+65)
+n = int(input())
 
-print(f'SN {n}{name}')
+count = n
+for i in range(2, int(n**0.5)+1):
+    for j in range(i, n):
+        if i*j<=n:
+            count += 1
+        else:
+            break
+
+print(count)
