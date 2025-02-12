@@ -1,11 +1,11 @@
-n = int(input())
+n, x = map(int, input().split())
 
-count = n
-for i in range(2, int(n**0.5)+1):
-    for j in range(i, n):
-        if i*j<=n:
-            count += 1
-        else:
-            break
+bus = [list(map(int, input().split())) for _ in range(n)]
+bus.sort()
 
-print(count)
+result = -1
+for s, t in bus:
+    if s+t <= x:
+        result = s
+
+print(result)
