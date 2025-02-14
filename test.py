@@ -1,3 +1,6 @@
-s = list(map(int, input().split(',')))
+dp = [1]*10001
+for i in range(3, 10001):
+    dp[i] = dp[i-2]+dp[i-1]
 
-print(len(s))
+n = int(input())
+print(dp[n])
