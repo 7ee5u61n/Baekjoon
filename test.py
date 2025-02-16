@@ -1,9 +1,7 @@
-a = list(input())
-b = set(input().split())
+a, b = map(int, input().split())
 
-for i in range(len(a)):
-    if a[i] in b:
-        a[i] = a[i].lower()
+m = (b-a)/400
 
-for i in a:
-    print(i, end='')
+result = 1/(1+10**m)
+
+print(result)
