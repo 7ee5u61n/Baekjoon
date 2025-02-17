@@ -1,7 +1,13 @@
-a, b = map(int, input().split())
+while True:
+    s = str(input())
+    a = s[0]
+    if a == '#':
+        break
+    b = s[2:].lower()
 
-m = (b-a)/400
+    result = 0
+    for i in b:
+        if i == a:
+            result += 1
 
-result = 1/(1+10**m)
-
-print(result)
+    print(f'{a} {result}')
