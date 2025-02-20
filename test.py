@@ -1,6 +1,12 @@
 n, m = map(int, input().split())
+cost = [int(input()) for _ in range(n)]
 
-if 100*n >= m:
-    print('Yes')
-else:
-    print('No')
+point = [0]*n
+for i in range(m):
+    judge = int(input())
+    for j in range(n):
+        if cost[j] <= judge:
+            point[j] += 1
+            break
+
+print(point.index(max(point))+1)
