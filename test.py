@@ -1,7 +1,11 @@
-n = int(input())
+dp = [0]*101
+dp[1] = 1
 
-for i in range(n-1):
-    print(' '*i+'*'*(2*n-1-2*i))
-print(' '*(n-1)+'*')
-for i in range(n-2, -1, -1):
-    print(' '*i+'*'*(2*n-1-2*i))
+for i in range(2, 101):
+    dp[i] = dp[i-1]+i**2
+
+while True:
+    n = int(input())
+    if n == 0:
+        break
+    print(dp[n])
