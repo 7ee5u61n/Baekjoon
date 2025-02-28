@@ -1,11 +1,14 @@
-dp = [0]*101
-dp[1] = 1
+n, m = map(int, input().split())
+paint = []
+for _ in range(n):
+    paint.append(list(input()))
 
-for i in range(2, 101):
-    dp[i] = dp[i-1]+i**2
+for i in range(n):
+    for j in range(m):
+        if paint[i][j] != '.':
+            paint[i][m-j-1] = paint[i][j]
 
-while True:
-    n = int(input())
-    if n == 0:
-        break
-    print(dp[n])
+for i in range(n):
+    for j in range(m):
+        print(paint[i][j], end='')
+    print('')
