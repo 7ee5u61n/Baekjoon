@@ -1,14 +1,14 @@
-n, m = map(int, input().split())
-paint = []
-for _ in range(n):
-    paint.append(list(input()))
-
-for i in range(n):
-    for j in range(m):
-        if paint[i][j] != '.':
-            paint[i][m-j-1] = paint[i][j]
-
-for i in range(n):
-    for j in range(m):
-        print(paint[i][j], end='')
-    print('')
+n = int(input())
+s = str(input())
+# 25자 이내
+if n <= 25:
+    print(s)
+else:
+    rest = s[11:-11]
+    # 한 문장 안
+    if '.' not in rest[:-1]:
+        rest = '...'
+        print(s[:11]+rest+s[-11:])
+    else:
+        rest = '......'
+        print(s[:9]+rest+s[-10:])
