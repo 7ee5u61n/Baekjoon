@@ -1,12 +1,9 @@
-import sys
-input = sys.stdin.readline
+import math
 
-n = int(input())
-x = list(map(int, input().split()))
+d, h, w = map(int, input().split())
 
-lenth = 0
-for i in range(n):
-    for j in range(n):
-        lenth += abs(x[i]-x[j])
+value = d/math.sqrt(h**2+w**2)
+rH = int(h*value)
+rW = int(w*value)
 
-print(lenth)
+print(rH, rW)
