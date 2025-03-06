@@ -1,7 +1,6 @@
-s = list(map(int, input().split()))
-t = list(map(int, input().split()))
-
-if sum(s) >= sum(t):
-    print(sum(s))
-else:
-    print(sum(t))
+T = int(input())
+for _ in range(T):
+    h, w = map(int, input().split())
+    for _ in range(h):
+        meat = input()
+        print(meat[::-1])
