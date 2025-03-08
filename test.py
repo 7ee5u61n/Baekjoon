@@ -1,19 +1,16 @@
 n = int(input())
-a = list(map(int, input().split()))
+score = [0]*(n+1)
 
-arithmetical = True
-if n > 2:
-    degree = a[1] - a[0]
-    for i in range(1, n-1):
-        if a[i+1] - a[i] != degree:
-            arithmetical = False
-            break
+for _ in range((n*(n-1))//2):
+    a,b,c,d = map(int, input().split())
+    if c > d:
+        score[a] += 3
+    elif c == d:
+        score[a] += 1
+        score[b] += 1
+    else:
+        score[b] += 3
+score.pop(0)
 
-if arithmetical:
-    b = a
-    c = [0]*n
-    print('YES')
-    print(*b)
-    print(*c)
-else:
-    print('NO')
+for i in score:
+    print(sorted(score, reverse=True).index(i)+1)
