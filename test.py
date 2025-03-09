@@ -1,16 +1,20 @@
-n = int(input())
-score = [0]*(n+1)
+n, m = map(int, input().split())
 
-for _ in range((n*(n-1))//2):
-    a,b,c,d = map(int, input().split())
-    if c > d:
-        score[a] += 3
-    elif c == d:
-        score[a] += 1
-        score[b] += 1
-    else:
-        score[b] += 3
-score.pop(0)
+garden = [[0]*(m+1) for _ in range(n+1)]
 
-for i in score:
-    print(sorted(score, reverse=True).index(i)+1)
+row = list(map(int, input().split()))
+col = list(map(int, input().split()))
+
+for i in range(n):
+    garden[i+1][0] = row[i]
+for i in range(m):
+    garden[0][i+1] = col[i]
+
+for i in range(1, n+1):
+    for j in range(1, m+1):
+        if garden[i-1][j] == garden[i][j-1]:
+            garden[i][j] = 0
+        else:
+            garden[i][j] = 1
+
+print(garden[n][m])
