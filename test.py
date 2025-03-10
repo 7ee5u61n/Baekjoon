@@ -1,20 +1,37 @@
-n, m = map(int, input().split())
+n = int(input())
+ace = list(map(int, input().split()))
+newyork = list(map(int, input().split()))
 
-garden = [[0]*(m+1) for _ in range(n+1)]
-
-row = list(map(int, input().split()))
-col = list(map(int, input().split()))
+ace_win = 0
+newyork_win = 0
+result = 0
 
 for i in range(n):
-    garden[i+1][0] = row[i]
-for i in range(m):
-    garden[0][i+1] = col[i]
-
-for i in range(1, n+1):
-    for j in range(1, m+1):
-        if garden[i-1][j] == garden[i][j-1]:
-            garden[i][j] = 0
+    # (R, S), (S, P)
+    if abs(ace[i]-newyork[i]) == 1:
+        if ace[i] > newyork[i]:
+            ace_win += 1
+            newyork_win = 0
         else:
-            garden[i][j] = 1
+            ace_win = 0
+            newyork_win += 1
+    # (R, P)
+    elif abs(ace[i]-newyork[i]) == 2:
+        if ace[i] > newyork[i]:
+            ace_win = 0
+            newyork_win += 1
+        else:
+            ace_win += 1
+            newyork_win = 0
+    # 비김
+    else:
+        if ace_win > newyork_win:
+            ace_win = 0
+            newyork_win += 1
+        else:
+            ace_win += 1
+            newyork_win = 0
+    
+    result = max(ace_win, newyork_win, result)
 
-print(garden[n][m])
+print(result)
