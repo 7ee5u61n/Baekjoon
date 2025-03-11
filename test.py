@@ -1,37 +1,16 @@
 n = int(input())
-ace = list(map(int, input().split()))
-newyork = list(map(int, input().split()))
+s = str(input())
 
-ace_win = 0
-newyork_win = 0
+hidden = ''
 result = 0
-
-for i in range(n):
-    # (R, S), (S, P)
-    if abs(ace[i]-newyork[i]) == 1:
-        if ace[i] > newyork[i]:
-            ace_win += 1
-            newyork_win = 0
-        else:
-            ace_win = 0
-            newyork_win += 1
-    # (R, P)
-    elif abs(ace[i]-newyork[i]) == 2:
-        if ace[i] > newyork[i]:
-            ace_win = 0
-            newyork_win += 1
-        else:
-            ace_win += 1
-            newyork_win = 0
-    # 비김
+for i in s:
+    if i.isnumeric():
+        hidden += i
     else:
-        if ace_win > newyork_win:
-            ace_win = 0
-            newyork_win += 1
-        else:
-            ace_win += 1
-            newyork_win = 0
+        if hidden:
+            result += int(hidden)
+            hidden = ''
+if hidden:
+    result += int(hidden)
     
-    result = max(ace_win, newyork_win, result)
-
 print(result)
