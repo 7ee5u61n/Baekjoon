@@ -1,16 +1,5 @@
-n = int(input())
-s = str(input())
+import sys
+input = sys.stdin.readline
 
-hidden = ''
-result = 0
-for i in s:
-    if i.isnumeric():
-        hidden += i
-    else:
-        if hidden:
-            result += int(hidden)
-            hidden = ''
-if hidden:
-    result += int(hidden)
-    
-print(result)
+n = int(input())
+print(n%20000303)
