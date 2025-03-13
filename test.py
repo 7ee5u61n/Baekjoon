@@ -1,5 +1,5 @@
-import sys
-input = sys.stdin.readline
+price = int(input())
+for _ in range(9):
+    price -= int(input())
 
-n = int(input())
-print(n%20000303)
+print(price)
