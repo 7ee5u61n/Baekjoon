@@ -1,5 +1,6 @@
-price = int(input())
-for _ in range(9):
-    price -= int(input())
+arr = list(map(int, input().split()))
 
-print(price)
+if arr == sorted(arr):
+    print('Good')
+else:
+    print('Bad')
