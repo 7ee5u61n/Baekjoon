@@ -1,14 +1,18 @@
-n = int(input())
-compression = dict()
+n1, n2 = map(int, input().split())
+group1 = list(input())
+group2 = list(input())
+t = int(input())
 
-for _ in range(n):
-    lower, upper = map(str, input().split())
-    compression[upper] = lower
+group1.reverse()
+sequence = group1 + group2
 
-packed = str(input())
-unpacked = ''
-for i in packed:
-    unpacked += compression[i]
+for _ in range(t):
+    for i in range(len(sequence)-1):
+        if sequence[i] in group1 and sequence[i+1] in group2:
+            sequence[i], sequence[i+1] = sequence[i+1], sequence[i]
+            
+            if sequence[i+1] == group1[-1]:
+                break
 
-s, e = map(int, input().split())
-print(unpacked[s-1:e])
+for i in range(n1+n2):
+    print(sequence[i], end='')
