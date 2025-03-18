@@ -1,20 +1,17 @@
 n = int(input())
-x = list(map(int, input().split()))
-x = sorted(x)
+seat = list(input())
 
-team = 0
-limit = x[0]
-member = 0
+couple = 0
+stack = ''
 for i in range(n):
-    if member == 0:
-        limit = x[i]
-    member += 1
+    stack += seat[i]
+    if 'LL' in stack:
+        couple += 1
+        stack = ''
 
-    if member == limit:
-        team += 1
-        member = 0
-
-if member:
-    team += 1
-
-print(team)
+if couple:
+    result = n-(couple-1)
+else:
+    result = n
+    
+print(result)
