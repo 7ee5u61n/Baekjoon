@@ -1,17 +1,8 @@
+t = int(input())
 n = int(input())
-seat = list(input())
+f = list(map(int, input().split()))
 
-couple = 0
-stack = ''
-for i in range(n):
-    stack += seat[i]
-    if 'LL' in stack:
-        couple += 1
-        stack = ''
-
-if couple:
-    result = n-(couple-1)
+if t <= sum(f):
+    print('Padaeng_i Happy')
 else:
-    result = n
-    
-print(result)
+    print('Padaeng_i Cry')
