@@ -1,8 +1,11 @@
-t = int(input())
-n = int(input())
-f = list(map(int, input().split()))
+dart = list(map(int, input().split()))
 
-if t <= sum(f):
-    print('Padaeng_i Happy')
+alice = (dart[(dart.index(20)-1)%20]+20+dart[(dart.index(20)+1)%20])/3
+bob = (sum(dart)/len(dart))
+
+if alice > bob:
+    print('Alice')
+elif alice < bob:
+    print('Bob')
 else:
-    print('Padaeng_i Cry')
+    print('Tie')
