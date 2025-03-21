@@ -1,11 +1,16 @@
-dart = list(map(int, input().split()))
+import sys
+input = sys.stdin.readline
 
-alice = (dart[(dart.index(20)-1)%20]+20+dart[(dart.index(20)+1)%20])/3
-bob = (sum(dart)/len(dart))
-
-if alice > bob:
-    print('Alice')
-elif alice < bob:
-    print('Bob')
-else:
-    print('Tie')
+n = int(input())
+for _ in range(n):
+    m = int(input())
+    end = False
+    for i in range(64):
+        if not end:
+            for j in range(i, 64):
+                if 2**i + 2**j == m:
+                    end = True
+                    print(i, j)
+                    break
+        else:
+            break
