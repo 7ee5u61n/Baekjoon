@@ -1,32 +1,19 @@
-import sys
-input = sys.stdin.readline
+n = int(input())
+# 국가별 메달 수
+medal = [0]*101
 
-s = set()
-m = int(input())
+info = []
+for _ in range(n):
+    info.append(list(map(int, input().split())))
 
-for i in range(1, m+1):
-    oper = list(input().split())
-    if oper[0] == 'add':
-        s.add(oper[1])
+info.sort(key= lambda x : x[2], reverse=True)
 
-    elif oper[0] == 'remove':
-        if oper[1] in s:
-            s.remove(oper[1])
-    
-    elif oper[0] == 'check':
-        if oper[1] in s:
-            print(1)
-        else:
-            print(0)
-    
-    elif oper[0] == 'toggle':
-        if oper[1] in s:
-            s.remove(oper[1])
-        else:
-            s.add(oper[1])
-    
-    elif oper[0] == 'all':
-        s = set(str(i) for i in range(1, 21))
-    
-    elif oper[0] == 'empty':
-        s = set()
+# 금, 은, 동
+winner = 0
+for country, student, score in info:
+    if winner >= 3:
+        break
+    if medal[country] < 2:
+        medal[country] += 1
+        winner += 1
+        print(country, student)
