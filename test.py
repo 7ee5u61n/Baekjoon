@@ -1,19 +1,7 @@
 n = int(input())
-# 국가별 메달 수
-medal = [0]*101
+arr = list(int(input()) for _ in range(n))
 
-info = []
-for _ in range(n):
-    info.append(list(map(int, input().split())))
-
-info.sort(key= lambda x : x[2], reverse=True)
-
-# 금, 은, 동
-winner = 0
-for country, student, score in info:
-    if winner >= 3:
-        break
-    if medal[country] < 2:
-        medal[country] += 1
-        winner += 1
-        print(country, student)
+if arr[2]-arr[1] == arr[1] - arr[0]:
+    print(arr[-1]+arr[1]-arr[0])
+elif arr[2]//arr[1] == arr[1]//arr[0]:
+    print(arr[-1]*(arr[1]//arr[0]))
