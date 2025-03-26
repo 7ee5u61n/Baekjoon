@@ -1,7 +1,13 @@
-n = int(input())
-arr = list(int(input()) for _ in range(n))
+T = int(input())
+for _ in range(T):
+    test_case = input()
 
-if arr[2]-arr[1] == arr[1] - arr[0]:
-    print(arr[-1]+arr[1]-arr[0])
-elif arr[2]//arr[1] == arr[1]//arr[0]:
-    print(arr[-1]*(arr[1]//arr[0]))
+    n = int(input())
+    candy = 0
+    for _ in range(n):
+        candy += int(input())
+
+    if candy%n == 0:
+        print('YES')
+    else:
+        print('NO')
