@@ -1,13 +1,14 @@
 T = int(input())
 for _ in range(T):
-    test_case = input()
+    x, y = map(int, input().split())
+    day = [0, 31, 29, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31]
 
-    n = int(input())
-    candy = 0
-    for _ in range(n):
-        candy += int(input())
-
-    if candy%n == 0:
-        print('YES')
+    if 0 <= x <= 23 and 0 <= y <= 59:
+        print('Yes', end=' ')
     else:
-        print('NO')
+        print('No', end=' ')
+    
+    if 1 <= x <= 12 and 1 <= y <= day[x]:
+        print('Yes')
+    else:
+        print('No')
