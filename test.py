@@ -1,14 +1,17 @@
 T = int(input())
 for _ in range(T):
-    x, y = map(int, input().split())
-    day = [0, 31, 29, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31]
+    input()
+    cm, y, su, sa, f = map(int, input().split())
+    b, gs, gc, w = map(int, input().split())
 
-    if 0 <= x <= 23 and 0 <= y <= 59:
-        print('Yes', end=' ')
-    else:
-        print('No', end=' ')
+    dough = int(min(cm/8, y/8, su/4, sa/1, f/9)*16)
     
-    if 1 <= x <= 12 and 1 <= y <= day[x]:
-        print('Yes')
-    else:
-        print('No')
+    banana = min(dough, b)
+    dough -= banana
+    strawberry = min(dough, gs//30)
+    dough -= strawberry
+    chocolate = min(dough, gc//25)
+    dough -= chocolate
+    walnut = min(dough, w//10)
+
+    print(banana+strawberry+chocolate+walnut)
