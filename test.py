@@ -1,17 +1,14 @@
-T = int(input())
-for _ in range(T):
-    input()
-    cm, y, su, sa, f = map(int, input().split())
-    b, gs, gc, w = map(int, input().split())
+n = int(input())
 
-    dough = int(min(cm/8, y/8, su/4, sa/1, f/9)*16)
+arr = [0]*(n+1)
+value = {0}
+
+for i in range(1, n+1):
+    if arr[i-1] - i < 0 or (arr[i-1] - i) in value:
+        arr[i] = arr[i-1] + i
+        value.add(arr[i])
+    else:
+        arr[i] = arr[i-1] - i
+        value.add(arr[i])
     
-    banana = min(dough, b)
-    dough -= banana
-    strawberry = min(dough, gs//30)
-    dough -= strawberry
-    chocolate = min(dough, gc//25)
-    dough -= chocolate
-    walnut = min(dough, w//10)
-
-    print(banana+strawberry+chocolate+walnut)
+print(arr[n])
