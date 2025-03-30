@@ -1,14 +1,12 @@
+from collections import deque
+
 n = int(input())
+t = int(input())
+hand = deque(map(int, input().split()))
+b = list(map(int, input().split()))
 
-arr = [0]*(n+1)
-value = {0}
-
-for i in range(1, n+1):
-    if arr[i-1] - i < 0 or (arr[i-1] - i) in value:
-        arr[i] = arr[i-1] + i
-        value.add(arr[i])
-    else:
-        arr[i] = arr[i-1] - i
-        value.add(arr[i])
+for i in range(len(b)):
+    for j in range(b[i]-1):
+        hand.append(hand.popleft())
+    print(hand[0], end=' ')
     
-print(arr[n])
