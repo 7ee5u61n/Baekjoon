@@ -1,13 +1,6 @@
-n, m = map(int, input().split())
-preference = [list(map(int, input().split())) for _ in range(n)]
+n, i = map(int, input().split())
 
-result = 0
-for i in range(m):
-    for j in range(i+1, m):
-        for k in range(j+1, m):
-            value = 0
-            for l in range(n):
-                value += max(preference[l][i], preference[l][j], preference[l][k])
-            result = max(value, result)
+handle = list(input().split() for _ in range(n))
+handle.sort()
 
-print(result)
+print(*handle[i-1])
