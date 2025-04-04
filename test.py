@@ -1,26 +1,19 @@
-def calc(a, b, c):
-    value = 0
-    if b == '+':
-        value += a+c
-    elif b == '-':
-        value += a-c
-    elif b == '*':
-        value += a*c
-    elif b == '/':
-        value += int(a/c)
+for a in range(1, 10):
+    # A가 a인지 물어보고 flush를 한다.
+    # print에 flush 파라미터를 넣으면 된다.
+    print("? A", a, flush=True)
+    
+    # 채점기의 답변을 입력받는다.
+    resp = int(input())
 
-    return value
+    if resp == 1:
+        # 답변이 "예"이므로 A의 값은 a이다.
+        # B의 값도 알아내야 하는데, 이 부분은 직접 채워보자.
+        for b in range(1, 10):
+            print("? B", b, flush=True)
+            resp = int(input())
 
-ko = list(map(str, input().split()))
-
-k1 = int(ko[0])
-o1 = ko[1]
-k2 = int(ko[2])
-o2 = ko[3]
-k3 = int(ko[4])
-
-value1 = calc(calc(k1, o1, k2), o2, k3)
-value2 = calc(k1, o1, calc(k2, o2, k3))
-
-print(min(value1, value2))
-print(max(value1, value2))
+            if resp == 1:
+                print("!", a + b)
+                break
+        break
