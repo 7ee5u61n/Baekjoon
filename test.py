@@ -1,26 +1,28 @@
-n = int(input())
-A, B, C, D = map(int, input().split())
-s = input()
+n , m = map(int, input().split())
 
-stack = 0
-if s[0] == 'a' and s[-1] == 'a':
-    for i in range(n):
-        if s[i] == 'a':
-            A -= 1
-        elif s[i] == 'b':
-            B -= 1
-        elif s[i] == 'c':
-            C -= 1
-        elif s[i] == 'd':
-            D -= 1
+entry = list(0 for _ in range(n+1))
+blue = []
+white = []
 
-        if i != n-1:
-            if s[i] == s[i+1]:
-                break
+while True:
+    classNumber, studentName = input().split()
+    if classNumber == '0' and studentName == '0':
+        break
 
-        stack += 1
+    classNumber = int(classNumber)
 
-if stack == n and A >= 0 and B >= 0 and C >= 0 and D >= 0:
-    print('Yes')
-else:
-    print('No')
+    if entry[classNumber] < m:
+        if classNumber % 2 == 1:
+            blue.append((classNumber, studentName))
+        else:
+            white.append((classNumber, studentName))
+
+        entry[classNumber] += 1
+
+blue.sort(key= lambda x: (x[0], len(x[1]), x[1]))
+white.sort(key= lambda x: (x[0], len(x[1]), x[1]))
+
+result = blue + white
+
+for i in result:
+    print(*i)
