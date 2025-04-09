@@ -1,14 +1,8 @@
-from collections import deque
+n =int(input())
+v = 0
 
-n = deque(input())
-first = deque(n)
+A = list(map(float, input().split()))
 
-result = 0
-while True:
-    n.appendleft(n.pop())
-    result += int(''.join(n))
-
-    if n == first:
-        break
-
-print(result)
+for a in A:
+    v = 1-((1-v)*(1-a/100))
+    print(v*100)
