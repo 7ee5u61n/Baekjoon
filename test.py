@@ -1,8 +1,10 @@
-n =int(input())
-v = 0
+import math
 
-A = list(map(float, input().split()))
+a, b, c = map(int, input().split())
+t = int(input())
 
-for a in A:
-    v = 1-((1-v)*(1-a/100))
-    print(v*100)
+if t <= 30:
+    print(a)
+else:
+    a += math.ceil((t-30)/b)*c
+    print(a)
