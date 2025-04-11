@@ -1,10 +1,6 @@
-import math
+taebo = list(map(str, input().split('(^0^)')))
 
-a, b, c = map(int, input().split())
-t = int(input())
+left = taebo[0].count('@')
+right = taebo[1].count('@')
 
-if t <= 30:
-    print(a)
-else:
-    a += math.ceil((t-30)/b)*c
-    print(a)
+print(left, right)
