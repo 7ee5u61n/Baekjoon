@@ -1,6 +1,12 @@
-taebo = list(map(str, input().split('(^0^)')))
+doc = list(input())
+search = list(input())
+n = len(search)
 
-left = taebo[0].count('@')
-right = taebo[1].count('@')
+result = 0
+for i in range(len(doc)):
+    if doc[i:i+n] == search:
+        result += 1
+        for j in range(i, i+n):
+            doc[j] = ''
 
-print(left, right)
+print(result)
