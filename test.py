@@ -1,12 +1,12 @@
-doc = list(input())
-search = list(input())
-n = len(search)
+x = int(input())
 
-result = 0
-for i in range(len(doc)):
-    if doc[i:i+n] == search:
-        result += 1
-        for j in range(i, i+n):
-            doc[j] = ''
+y = -1
+for i in range(x+1, 10000):
+    front = int(str(i)[0:2])
+    back = int(str(i)[2:4])
 
-print(result)
+    if (front+back)**2 == i:
+        y = i
+        break
+
+print(y)
