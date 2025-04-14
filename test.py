@@ -1,12 +1,22 @@
-x = int(input())
+import sys
 
-y = -1
-for i in range(x+1, 10000):
-    front = int(str(i)[0:2])
-    back = int(str(i)[2:4])
+n = int(input())
+arr = list()
+for _ in range(n):
+    arr.append(list(map(int, input().split())))
 
-    if (front+back)**2 == i:
-        y = i
-        break
+mina = 0
+minb = 0
+minrss = sys.maxsize
+for a in range(1, 101):
+    for b in range(1, 101):
+        rss = 0
+        for x, y in arr:
+            rss += (y-(a*x+b))**2
+        
+        if minrss > rss:
+            minrss = rss
+            mina = a
+            minb = b
 
-print(y)
+print(mina, minb)
