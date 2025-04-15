@@ -1,22 +1,16 @@
-import sys
+dp = [0]*65
+dp[1] = 1
+
+for i in range(2, 65):
+    dp[i] = dp[i-1]*2
 
 n = int(input())
-arr = list()
-for _ in range(n):
-    arr.append(list(map(int, input().split())))
 
-mina = 0
-minb = 0
-minrss = sys.maxsize
-for a in range(1, 101):
-    for b in range(1, 101):
-        rss = 0
-        for x, y in arr:
-            rss += (y-(a*x+b))**2
-        
-        if minrss > rss:
-            minrss = rss
-            mina = a
-            minb = b
+count = 0
+for i in range(65):
+    if n <= dp[i]:
+        count = i
+        n -= dp[i]
+        break
 
-print(mina, minb)
+print(count)
