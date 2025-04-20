@@ -1,22 +1,25 @@
-keypad = [[''], ['a', 'b', 'c'], ['d', 'e', 'f'],
-          ['g', 'h', 'i'], ['j', 'k', 'l'], ['m', 'n', 'o'],
-          ['p', 'q', 'r', 's'], ['t', 'u', 'v'], ['w', 'x', 'y', 'z']]
+upperVowel = ['A', 'I', 'Y', 'E', 'O', 'U']
+upperConsonant = ['B', 'K', 'X', 'Z', 'N', 'H', 'D', 'C', 'W', 'G', 'P', 'V', 'J', 'Q', 'T', 'S', 'R', 'L', 'M', 'F']
+lowerVowel = ['a', 'i', 'y', 'e', 'o', 'u']
+lowerConsonant = ['b', 'k', 'x', 'z', 'n', 'h', 'd', 'c', 'w', 'g', 'p', 'v', 'j', 'q', 't', 's', 'r', 'l', 'm', 'f']
 
-arr = list(map(int, input().split()))
-s = str(input())
+while True:
+    try:
+        s = str(input())    
+        for i in range(len(s)):
+            if s[i].isupper():
+                if s[i] in upperVowel:
+                    print(upperVowel[(upperVowel.index(s[i])+3)%6], end='')
+                else:
+                    print(upperConsonant[(upperConsonant.index(s[i])+10)%20], end='')
+            elif s[i].islower():
+                if s[i] in lowerVowel:
+                    print(lowerVowel[(lowerVowel.index(s[i])+3)%6], end='')
+                else:
+                    print(lowerConsonant[(lowerConsonant.index(s[i])+10)%20], end='')
 
-key = [[] for _ in range(9)]
-for i in range(9):
-    key[i] = keypad[arr[i]-1]
-
-output = '#'
-for i in range(len(s)):
-    for j in range(9):
-        if s[i] in key[j]:
-            temp = (str(j+1)*(key[j].index(s[i])+1))
-            if output[-1] == temp[0]:
-                print('#'+temp, end='')
             else:
-                print(temp, end='')
-            output = temp
-            break
+                print(s[i], end='')
+        print()
+    except EOFError:
+        break
