@@ -1,13 +1,9 @@
 n = int(input())
-s = str(input())
+for _ in range(n):
+    p = int(input())
+    player = []
+    for _ in range(p):
+        player.append(input().split())
 
-color = {'R':0, 'B':0}
-color[s[0]] = 1
-
-for i in range(1, n):
-    if s[i-1] != s[i]:
-        color[s[i]] += 1
-
-result = min(color['R'], color['B']) + 1
-
-print(result)
+    player.sort(key=lambda x:int(x[0]), reverse=True)
+    print(player[0][1])
