@@ -1,9 +1,7 @@
-n = int(input())
-for _ in range(n):
-    p = int(input())
-    player = []
-    for _ in range(p):
-        player.append(input().split())
+n = str(input())
 
-    player.sort(key=lambda x:int(x[0]), reverse=True)
-    print(player[0][1])
+result = 0
+for i in n:
+    result += int(i)**5
+
+print(result)
