@@ -1,14 +1,8 @@
-dwarf = [int(input()) for _ in range(9)]
-dwarf.sort()
-rest = sum(dwarf)-100
+n = int(input())
 
-for i in range(9):
-    if len(dwarf) == 9:
-        for j in range(i, 9):
-            if dwarf[i]+dwarf[j] == rest:
-                dwarf.pop(i)
-                dwarf.pop(j-1)
-                break
+for _ in range(n):
+    price = float(input())
+    price *= 0.8
+
+    print(f'${price:.2f}')
     
-for i in range(7):
-    print(dwarf[i])
