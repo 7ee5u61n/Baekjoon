@@ -1,8 +1,18 @@
-n = int(input())
+while True:
+    m, a, b = map(int, input().split())
+    if m == 0 and a == 0 and b == 0:
+        break
 
-for _ in range(n):
-    price = float(input())
-    price *= 0.8
+    train = m/a
+    airplane = m/b
 
-    print(f'${price:.2f}')
-    
+    time = (train-airplane)*3600
+    time = round(time)
+
+    h = time//3600
+    time %= 3600
+    m = time//60
+    time %= 60
+    s = time
+
+    print(f'{h}:{m:02d}:{s:02d}')
