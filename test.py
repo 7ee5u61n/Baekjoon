@@ -1,18 +1,19 @@
+def numeral(num, base):
+    result = ''
+    while num >= base:
+        result += str(num%base)
+        num //= base
+    result += str(num)
+    
+    return(result[::-1])
+
 while True:
-    m, a, b = map(int, input().split())
-    if m == 0 and a == 0 and b == 0:
+    arr = list(map(int, input().split()))
+    if arr[0] == 0:
         break
 
-    train = m/a
-    airplane = m/b
+    b, p, m = arr[0], arr[1], arr[2]
 
-    time = (train-airplane)*3600
-    time = round(time)
-
-    h = time//3600
-    time %= 3600
-    m = time//60
-    time %= 60
-    s = time
-
-    print(f'{h}:{m:02d}:{s:02d}')
+    n = int(str(p), b) % int(str(m), b)
+    
+    print(numeral(n, b))
