@@ -1,19 +1,19 @@
-def numeral(num, base):
-    result = ''
-    while num >= base:
-        result += str(num%base)
-        num //= base
-    result += str(num)
-    
-    return(result[::-1])
+n = int(input())
+a = list(map(str, input().split()))
+student = {}
+for i in range(n):
+    student[a[i]] = 0
 
-while True:
-    arr = list(map(int, input().split()))
-    if arr[0] == 0:
-        break
+for _ in range(n):
+    like = list(map(str, input().split()))
+    for i in range(len(like)):
+        student[like[i]] += 1
 
-    b, p, m = arr[0], arr[1], arr[2]
+result = []
+for key, value in student.items():
+    result.append([key, value])
 
-    n = int(str(p), b) % int(str(m), b)
-    
-    print(numeral(n, b))
+result.sort(key=lambda x: (-x[1], x[0]))
+
+for i, j in result:
+    print(i, j)
