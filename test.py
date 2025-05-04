@@ -1,19 +1,20 @@
-n = int(input())
-a = list(map(str, input().split()))
-student = {}
+n, m = map(int, input().split())
+
+lecture = {}
+
 for i in range(n):
-    student[a[i]] = 0
+    k = int(input())
+    student = list(map(int, input().split()))
 
-for _ in range(n):
-    like = list(map(str, input().split()))
-    for i in range(len(like)):
-        student[like[i]] += 1
+    for j in range(k):
+        if student[j] in lecture:
+            lecture[student[j]] += 1
+        else:
+            lecture[student[j]] = 1
 
-result = []
-for key, value in student.items():
-    result.append([key, value])
+result = 0
+for k, v in lecture.items():
+    if v >= m:
+        result += 1
 
-result.sort(key=lambda x: (-x[1], x[0]))
-
-for i, j in result:
-    print(i, j)
+print(result)
