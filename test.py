@@ -1,38 +1,88 @@
-n = int(input())
-arr = [list(input()) for _ in range(n)]
+def dateToDay(date):
+    day = 0
+    for i in range(1, date[0]+1):
+        if i in lunarYear:
+            if i == date[0]:
+                for j in range(1, date[1]+1):
+                    if j == date[1]:
+                        for k in range(1, date[2]+1):
+                            day += 1
+                    else:
+                        for k in range(1, lunarMonth[j]+1):
+                            day+= 1
+            else:
+                for j in range(1, 13):
+                    for k in range(1, lunarMonth[j]+1):
+                        day += 1
 
-# 심장 위치
-row = 0 
-col = 0
-for i in range(n):
-    if row != 0 and col != 0:
-        break
-    for j in range(n):
-        if arr[i][j] == '*':
-            row = i+1
-            col = j
-            break
+        else:
+            if i == date[0]:
+                for j in range(1, date[1]+1):
+                    if j == date[1]:
+                        for k in range(1, date[2]+1):
+                            day += 1
+                    else:
+                        for k in range(1, month[j]+1):
+                            day += 1
+            else:
+                for j in range(1, 13):
+                    for k in range(1, month[j]+1):
+                        day += 1
+    return day
 
-leftArm = 0
-rightArm = 0
-waist = 0
-leftLeg = 0
-rightLeg = 0
+def thousand(date):
+    day = 0
+    for i in range(1, date[0]+1001):
+        if i in lunarYear:
+            if i == date[0]:
+                for j in range(1, date[1]+1):
+                    if j == date[1]:
+                        for k in range(1, date[2]+1):
+                            day += 1
+                    else:
+                        for k in range(1, lunarMonth[j]+1):
+                            day+= 1
+            else:
+                for j in range(1, 13):
+                    for k in range(1, lunarMonth[j]+1):
+                        day += 1
 
-for i in range(1, n):
-    if (0 <= row < n) and (0 <= col-i < n) and arr[row][col-i] == '*':
-        leftArm += 1
-    
-    if (0 <= row < n) and (0 <= col+i < n) and arr[row][col+i] == '*':
-        rightArm += 1
-    
-    if (0 <= row+i < n) and (0 <= col < n) and arr[row+i][col] == '*':
-        waist += 1
-    elif (0 <= row+i < n) and (0 <= col < n) and arr[row+i][col] == '_':
-        if arr[row+i][col-1] == '*':
-            leftLeg += 1
-        if arr [row+i][col+1] == '*':
-            rightLeg += 1  
-        
-print(row+1, col+1)
-print(leftArm, rightArm, waist, leftLeg, rightLeg)
+        else:
+            if i == date[0]:
+                for j in range(1, date[1]+1):
+                    if j == date[1]:
+                        for k in range(1, date[2]+1):
+                            day += 1
+                    else:
+                        for k in range(1, month[j]+1):
+                            day += 1
+            else:
+                for j in range(1, 13):
+                    for k in range(1, month[j]+1):
+                        day += 1
+    return day
+
+lunarYear = set()
+for i in range(1, 10000):
+    if i % 4 == 0:
+        if i % 100 == 0 and i % 400 != 0:
+            continue
+        else:
+            lunarYear.add(i)
+
+month = {1:31, 2:28, 3:31, 4:30, 5:31, 6:30,
+         7:31, 8:31, 9:30, 10:31, 11:30, 12:31}
+lunarMonth = {1:31, 2:29, 3:31, 4:30, 5:31, 6:30,
+         7:31, 8:31, 9:30, 10:31, 11:30, 12:31}
+
+today = list(map(int, input().split()))
+dday = list(map(int, input().split()))
+
+todayDay = dateToDay(today)
+ddayDay = dateToDay(dday)
+thousandDay = thousand(today)
+
+if ddayDay >= thousandDay:
+    print('gg')
+else:
+    print(f'D-{ddayDay - todayDay}')
