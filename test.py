@@ -1,9 +1,8 @@
-while True:
-    n = int(input())
-    if n == 0:
-        break
-    
-    arr = [str(input()) for _ in range(n)]
-    arr.sort(key= lambda x: x.upper())
-    
-    print(arr[0])
+n, x = map(int, input().split())
+a = list(map(int, input().split()))
+
+socks = 2000
+for i in range(n-1):
+    socks = min(a[i]+a[i+1], socks)
+
+print(socks*x)
