@@ -1,18 +1,26 @@
-dp = ['1']*10001
-for i in range(1, 10001):
-    value = int(dp[i-1])*i
-    
-    while value % 10 == 0:
-        value //= 10
+j = int(input())
+a = int(input())
 
-    dp[i] = str(value)[-5:]
+jersey = ['X']
+for i in range(j):
+    jersey.append(str(input()))
 
-while True:
-    try:
-        n = str(input())
-        result = dp[int(n)][-1]
-        
-        print(f'{' '*(5-len(n))}{n} -> {result}')
-    
-    except:
-        break
+result = 0
+for i in range(a):
+    size, number = input().split()
+    number = int(number)
+
+    if jersey[number] != 'X':
+        if size == 'S':
+            jersey[number] = 'X'
+            result += 1
+        elif size == 'M':
+            if jersey[number] != 'S':
+                jersey[number] = 'X'
+                result += 1
+        else:
+            if jersey[number] == 'L':
+                jersey[number] = 'X'
+                result += 1
+
+print(result)
