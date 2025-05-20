@@ -1,6 +1,12 @@
-result = 0
+n, m = map(int, input().split())
+a = list(map(int, input().split()))
 
-for _ in range(5):
-    result += int(input())
-
-print(result)
+diet = 0
+day = -1
+for i in range(n-1, -1, -1):
+    diet += a[i]
+    if diet >= m:
+        day = i+1
+        break
+        
+print(day)
