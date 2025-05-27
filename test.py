@@ -1,6 +1,9 @@
-n, m = map(int, input().split())
+n = int(input())
+T = 0
+B = 5000
+for _ in range(n):
+    t, b = map(int, input().split())
+    T = max(t, T)
+    B = min(b, B)
 
-if n % 2 == 0 or m % 2 == 0:
-    print('A')
-else:
-    print('B')
+print((T*B)%7+1)
