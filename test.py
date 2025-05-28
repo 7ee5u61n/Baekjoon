@@ -1,9 +1,13 @@
 n = int(input())
-T = 0
-B = 5000
-for _ in range(n):
-    t, b = map(int, input().split())
-    T = max(t, T)
-    B = min(b, B)
 
-print((T*B)%7+1)
+a = 1
+b = 1
+for i in range(n-1):
+    if a == 1:
+        a = b+1
+        b = 1
+    else:
+        a -= 1
+        b += 1
+
+print(a, b)
