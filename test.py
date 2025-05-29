@@ -1,13 +1,10 @@
-n = int(input())
+mushroom = [int(input()) for _ in range(10)]
+point = 0
+for i in range(10):
+    if point + mushroom[i] >= 100:
+        if abs(100-point) >= abs(100-(point+mushroom[i])):
+            point += mushroom[i]
+        break
+    point += mushroom[i]
 
-a = 1
-b = 1
-for i in range(n-1):
-    if a == 1:
-        a = b+1
-        b = 1
-    else:
-        a -= 1
-        b += 1
-
-print(a, b)
+print(point)
