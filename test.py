@@ -1,10 +1,21 @@
-import sys
-input = sys.stdin.readline
+n, m = map(int, input().split())
+card = []
+for _ in range(n):
+    number = list(map(int, input().split()))
+    number.sort(reverse=True)
+    card.append(number)
 
-n = int(input())
+player = [0]*(n)
+for i in range(m):
+    get = 0
+    for j in range(n):
+        get = max(card[j][i], get)
 
-arr = [int(input()) for _ in range(n)]
-arr.sort(reverse=True)
+    for j in range(n):
+        if card[j][i] == get:
+            player[j] += 1
 
-for i in arr:
-    print(i)
+win = max(player)
+for i in range(n):
+    if player[i] == win:
+        print(i+1, end=' ')
