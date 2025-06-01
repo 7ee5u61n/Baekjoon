@@ -1,21 +1,17 @@
-n, m = map(int, input().split())
-card = []
-for _ in range(n):
-    number = list(map(int, input().split()))
-    number.sort(reverse=True)
-    card.append(number)
+n, m, t = map(int, input().split())
 
-player = [0]*(n)
-for i in range(m):
-    get = 0
-    for j in range(n):
-        get = max(card[j][i], get)
+burger = 0
+coke = 10000
 
-    for j in range(n):
-        if card[j][i] == get:
-            player[j] += 1
-
-win = max(player)
-for i in range(n):
-    if player[i] == win:
-        print(i+1, end=' ')
+for i in range(t//n, -1, -1):
+    for j in range(t//m, -1, -1):
+        temp = t-(i*n+j*m)
+        if coke > temp >= 0:
+            burger = i+j
+            coke = temp
+        elif temp == coke:
+            if i+j > burger:
+                burger = i+j
+                coke = temp
+    
+print(burger, coke)
