@@ -1,17 +1,13 @@
-n, m, t = map(int, input().split())
+x, y, p1, p2 = map(int, input().split())
 
-burger = 0
-coke = 10000
+result = -1
+for _ in range(10001):
+    if p1 < p2:
+        p1 += x
+    elif p1 > p2:
+        p2 += y
+    else:
+        result = p1
+        break
 
-for i in range(t//n, -1, -1):
-    for j in range(t//m, -1, -1):
-        temp = t-(i*n+j*m)
-        if coke > temp >= 0:
-            burger = i+j
-            coke = temp
-        elif temp == coke:
-            if i+j > burger:
-                burger = i+j
-                coke = temp
-    
-print(burger, coke)
+print(result)
