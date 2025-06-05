@@ -1,9 +1,8 @@
-n = int(input())
+n, m = map(int, input().split())
 
-for k in range(64, -1, -1):
-    if n%2 == 1:
-        break
-    else:
-        n//=2
+a = list(map(int, input().split()))
+b = list(map(int, input().split()))
 
-print(k)
+result = sorted(a+b)
+
+print(*result)
