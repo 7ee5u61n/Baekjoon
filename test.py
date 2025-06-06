@@ -1,8 +1,9 @@
-n, m = map(int, input().split())
+import sys
+input = sys.stdin.readline
 
-a = list(map(int, input().split()))
-b = list(map(int, input().split()))
+n = int(input())
+arr = list(int(input()) for _ in range(n))
 
-result = sorted(a+b)
-
-print(*result)
+arr = sorted(arr)
+for i in range(n):
+    print(arr[i])
