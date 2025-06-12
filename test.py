@@ -1,14 +1,8 @@
-r, c, n = map(int, input().split())
+s = list(input())
+t = int(input())
+for _ in range(t):
+    a, b = map(int, input().split())
+    s[a], s[b] = s[b], s[a]
 
-result = 1
-if r%n == 0:
-    result *= r//n
-else:
-    result *= r//n+1
-
-if c%n == 0:
-    result *= c//n
-else:
-    result *= c//n+1
-
-print(result)
+for i in s:
+    print(i, end='')
