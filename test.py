@@ -1,22 +1,13 @@
-n, s = map(str, input().split())
-
-# 채팅 기록
+s = str(input())
 arr = []
-# 정답
-answer = ''
-for i in range(int(n)):
-    name, chat = map(str, input().split())
-    arr.append([name, chat])
-    if name == s:
-        answer = chat
+n = len(s)
+for i in range(1, n-1):
+    a = s[0:i]
+    for j in range(1, n-i):
+        b = s[i:i+j]
+        c = s[i+j:]
+        value = a[::-1] + b[::-1] + c[::-1]
+        arr.append(value)
 
-# 당첨자 이전에 정답인 사람
-count = 0
-for name, chat in arr:
-    if chat == answer:
-        # 당첨자
-        if name == s:
-            break
-        count += 1
-        
-print(count)
+result = sorted(arr)[0]
+print(result)
