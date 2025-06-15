@@ -1,13 +1,19 @@
-s = str(input())
-arr = []
-n = len(s)
-for i in range(1, n-1):
-    a = s[0:i]
-    for j in range(1, n-i):
-        b = s[i:i+j]
-        c = s[i+j:]
-        value = a[::-1] + b[::-1] + c[::-1]
-        arr.append(value)
+import sys
 
-result = sorted(arr)[0]
-print(result)
+n = int(input())
+participant = {}
+for i in range(n):
+    name = str(input())
+    if participant.get(name):
+        participant[name] += 1
+    else:
+        participant[name] = 1
+
+for i in range(n-1):
+    name = str(input())
+    participant[name] -= 1
+
+for i, j in participant.items():
+    if j == 1:
+        print(i)
+        break
