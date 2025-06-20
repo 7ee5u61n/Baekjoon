@@ -1,16 +1,16 @@
-T = int(input())
-for _ in range(T):
-    g, c, e = map(int, input().split())
-    if g == 1:
-        g = 1
-    elif g == 2:
-        g = 3
-    elif g == 3:
-        g = 5
-        
-    if c >= e:
-        result = 0
-    else:
-        result = (e - c) * g
-    
-    print(result)
+e, s, m = map(int, input().split())
+
+E, S, M = 0, 0, 0
+for i in range(15*28*19+1):
+    E += 1
+    if E > 15:
+        E = 1
+    S += 1
+    if S > 28:
+        S = 1
+    M += 1
+    if M > 19:
+        M = 1
+    if E == e and S == s and M == m:
+        print(i + 1)
+        break
