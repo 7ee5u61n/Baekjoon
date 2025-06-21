@@ -1,16 +1,20 @@
-e, s, m = map(int, input().split())
+import sys
+input = sys.stdin.readline
 
-E, S, M = 0, 0, 0
-for i in range(15*28*19+1):
-    E += 1
-    if E > 15:
-        E = 1
-    S += 1
-    if S > 28:
-        S = 1
-    M += 1
-    if M > 19:
-        M = 1
-    if E == e and S == s and M == m:
-        print(i + 1)
-        break
+n = int(input())
+entered = set()
+count = 0
+for _ in range(n):
+    a, b = map(int, input().split())
+    if b == 1:
+        if a in entered:
+            count += 1
+        else:
+            entered.add(a)
+    else:
+        if a in entered:
+            entered.remove(a)
+        else:
+            count += 1
+
+print(count + len(entered))
