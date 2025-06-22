@@ -1,20 +1,24 @@
-import sys
-input = sys.stdin.readline
+m = int(input())
+cocktail = {}
 
-n = int(input())
-entered = set()
-count = 0
-for _ in range(n):
-    a, b = map(int, input().split())
-    if b == 1:
-        if a in entered:
-            count += 1
-        else:
-            entered.add(a)
+for i in range(m):
+    s, x = input().split()
+    x = int(x)
+    if s in cocktail:
+        cocktail[s] += x
     else:
-        if a in entered:
-            entered.remove(a)
-        else:
-            count += 1
+        cocktail[s] = x
 
-print(count + len(entered))
+delicious = False
+for i in range(len(cocktail)):
+    for j in range(i + 1, len(cocktail)):
+        s1 = list(cocktail.values())[i]
+        s2 = list(cocktail.values())[j]
+        if int(s1*1.618) == s2 or int(s2*1.618) == s1:
+            delicious = True
+            break
+
+if delicious:
+    print("Delicious!")
+else:
+    print("Not Delicious...")
