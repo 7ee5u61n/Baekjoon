@@ -1,10 +1,18 @@
-n = int(input())
-count = 0
-while True:
-    if len(str(n*2)) > len(str(n)):
-        break
+import sys
+input = sys.stdin.readline
 
-    n *= 2
-    count += 1
+n, c = map(int, input().split())
+message = list(map(int, input().split()))
+number = {}
 
-print(count)
+for i in range(n):
+    x = message[i]
+    if x in number:
+        number[x] += 1
+    else:
+        number[x] = 1
+
+result = sorted(number.items(), key=lambda x: -x[1])
+for x, y in result:
+    for _ in range(y):
+        print(x, end=' ')
