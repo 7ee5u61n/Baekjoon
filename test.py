@@ -1,18 +1,10 @@
-import sys
-input = sys.stdin.readline
-
-n, c = map(int, input().split())
-message = list(map(int, input().split()))
-number = {}
-
-for i in range(n):
-    x = message[i]
-    if x in number:
-        number[x] += 1
-    else:
-        number[x] = 1
-
-result = sorted(number.items(), key=lambda x: -x[1])
-for x, y in result:
-    for _ in range(y):
-        print(x, end=' ')
+T = int(input())
+for _ in range(T):
+    a, b, c = map(int, input().split())
+    count = 0
+    for i in range(1, a+1):
+        for j in range(1, b+1):
+            for k in range(1, c+1):
+                if i % j == j % k == k % i:
+                    count += 1
+    print(count)
