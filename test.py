@@ -1,10 +1,13 @@
-T = int(input())
-for _ in range(T):
-    a, b, c = map(int, input().split())
-    count = 0
-    for i in range(1, a+1):
-        for j in range(1, b+1):
-            for k in range(1, c+1):
-                if i % j == j % k == k % i:
-                    count += 1
-    print(count)
+import sys
+input = sys.stdin.readline
+
+n = int(input())
+
+calc = ''
+for i in range(2*n-1):
+    value = str(input().strip())
+    if value == '/':
+        value = '//'
+    calc += value
+
+print(eval(calc))
