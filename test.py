@@ -1,11 +1,19 @@
-import sys
-input = sys.stdin.readline
+n, l = map(int, input().split())
+street = [0] * (l+1)
+for _ in range(n):
+    d, r, g = map(int, input().split())
+    street[d] = [r, g]
+# print(street)
+time = 0
+distance = 0
+while distance < l:
+    if street[distance]:
+        r, g = street[distance]
+        if time % (r+g) >= r:
+            distance += 1
+    else:
+        distance += 1
 
-r, k, m = map(int, input().split())
+    time += 1
 
-for _ in range(m//k):
-    r //= 2
-    if r < 1:
-        break
-    
-print(r)
+print(time)
