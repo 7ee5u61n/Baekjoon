@@ -1,21 +1,22 @@
-n = int(input())
-s = str(input())
+n, m = map(int, input().split())
+teacher = []
+for _ in range(n):
+    teacher.append(input())
 
-alphabet = [0]*26
-for i in range(n):
-    if n % 2:
-        if i == n//2:
-            continue
-    index = ord(s[i])-97
-    alphabet[index] += 1
+escape = False
+for i in range(m):
+    count = 0
+    for j in range(n):
+        if teacher[j][i] == 'O':
+            break
+        else:
+            count += 1
 
-palidrome = True
-for i in alphabet:
-    if i % 2:
-        palidrome = False
+    if count == n:
+        escape = i+1
         break
 
-if palidrome:
-    print('Yes')
+if escape:
+    print(escape)
 else:
-    print('No')
+    print('ESCAPE FAILED')
