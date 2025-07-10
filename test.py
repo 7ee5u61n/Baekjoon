@@ -1,22 +1,15 @@
-n, m = map(int, input().split())
-teacher = []
-for _ in range(n):
-    teacher.append(input())
-
-escape = False
-for i in range(m):
-    count = 0
-    for j in range(n):
-        if teacher[j][i] == 'O':
-            break
-        else:
-            count += 1
-
-    if count == n:
-        escape = i+1
+while True:
+    s = str(input())
+    if s == 'EOI':
         break
 
-if escape:
-    print(escape)
-else:
-    print('ESCAPE FAILED')
+    found = False
+    for i in range(len(s)-4):
+        if s[i:i+4].upper() == 'NEMO':
+            found = True
+            break
+
+    if found:
+        print('Found')
+    else:
+        print('Missing')
