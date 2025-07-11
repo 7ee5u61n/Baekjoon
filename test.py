@@ -1,15 +1,8 @@
-while True:
-    s = str(input())
-    if s == 'EOI':
-        break
+p = list(float(input()) for _ in range(10))
+p.sort(reverse=True)
+result = 1
+for i in range(1, 10):
+    result *= p[i-1]/i
 
-    found = False
-    for i in range(len(s)-4):
-        if s[i:i+4].upper() == 'NEMO':
-            found = True
-            break
-
-    if found:
-        print('Found')
-    else:
-        print('Missing')
+result *= int(1e9)
+print(round(result, 6))
