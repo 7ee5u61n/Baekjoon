@@ -1,16 +1,24 @@
-n = int(input())
-
-for i in range(n):
-    print('@'*n+' '*3*n+'@'*n)
-
-for i in range(n):
-    print('@'*n+' '*2*n+'@'*n)
+def solve(s):
+    value = 0
+    for i in s:
+        if i.isupper():
+            value += 4
+        elif i.islower():
+            value += 2
+        elif i.isdigit():
+            value += 2
+        elif i == ' ':
+            value += 1
     
-for i in range(n):
-    print('@'*3*n)
+    return value
 
-for i in range(n):    
-    print('@'*n+' '*2*n+'@'*n)
-    
-for i in range(n):
-    print('@'*n+' '*3*n+'@'*n)
+j, n = map(int, input().split())
+
+result = 0
+for _ in range(n):
+    s = input()
+
+    if solve(s) <= j:
+        result += 1
+
+print(result)
