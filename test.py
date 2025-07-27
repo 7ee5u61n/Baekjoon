@@ -1,24 +1,19 @@
-def solve(s):
-    value = 0
-    for i in s:
-        if i.isupper():
-            value += 4
-        elif i.islower():
-            value += 2
-        elif i.isdigit():
-            value += 2
-        elif i == ' ':
-            value += 1
-    
-    return value
+n, m = map(int, input().split())
 
-j, n = map(int, input().split())
+a = list(input() for _ in range(n))
+b = list(input() for _ in range(n))
 
-result = 0
-for _ in range(n):
-    s = input()
+result = True
+for i in range(n):
+    temp = ''        
+    for j in range(m):
+        temp += a[i][j]*2
 
-    if solve(s) <= j:
-        result += 1
+    if temp != b[i]:
+        result = False
+        break
 
-print(result)
+if result:
+    print("Eyfa")
+else:
+    print("Not Eyfa")
