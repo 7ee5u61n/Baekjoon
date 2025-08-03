@@ -1,10 +1,17 @@
-m = int(input())
+q = int(input())
+problem = 0
+adios = False
+for _ in range(q):
+    a, b = map(int, input().split())
+    if a == 1:
+        problem += b
+    elif a == 2:
+        problem -= b
 
-result = 0
-for i in range(m):
-    if i < 30:
-        result += 0.5
-    else:
-        result += 1.5
+    if problem < 0:
+        adios = True
 
-print(f'{result:.1f}')
+if adios:
+    print('Adios')
+else:
+    print('See you next month')
