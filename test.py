@@ -1,17 +1,10 @@
-q = int(input())
-problem = 0
-adios = False
-for _ in range(q):
-    a, b = map(int, input().split())
-    if a == 1:
-        problem += b
-    elif a == 2:
-        problem -= b
+n = int(input())
+v = list(map(int, input().split()))
 
-    if problem < 0:
-        adios = True
+start = v.index(max(v))+1
 
-if adios:
-    print('Adios')
-else:
-    print('See you next month')
+result = 0
+for i in range(n-1):
+    result += v[(i+start)%n]
+
+print(result)
