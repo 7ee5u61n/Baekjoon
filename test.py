@@ -1,10 +1,8 @@
 n = int(input())
-a, b = map(int, input().split())
 
-beverages = a//2+b
+result = 0
+for i in range(n):
+    arr = list(map(int, input().split()))
+    result += sum(arr)
 
-if n > beverages:
-    print(beverages)
-else:
-    print(n)
-    
+print(result)
