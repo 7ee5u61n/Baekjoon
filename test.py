@@ -1,8 +1,22 @@
+import sys
+input = sys.stdin.readline
+
 n = int(input())
+x = list(map(int, input().split()))
+l = list(map(int, input().split()))
+c = list(map(str, input().split()))
 
-result = 0
+result = False
 for i in range(n):
-    arr = list(map(int, input().split()))
-    result += sum(arr)
+    for j in range(i+1, n):
+        if abs(x[i]-x[j]) <= l[i]+l[j] and c[i] != c[j]:
+            result = True
+            break
+    if result:
+        break
 
-print(result)
+if result:
+    print("YES")
+    print(i+1, j+1)
+else:
+    print("NO")
