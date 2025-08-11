@@ -1,10 +1,8 @@
-n, k = map(int, input().split())
+for i in range(1, 101):
+    s = str(input())
+    if s == 'Was it a cat I saw?':
+        break
 
-arr = list(list(map(int, input().split())) for _ in range(n))
-
-for i in range(n):
-    temp = ''
-    for j in range(n):
-        temp += ((str(arr[i][j])+' ')*k)
-    for j in range(k):
-        print(temp)
+    for j in range(0, len(s), i+1):
+        print(s[j], end='')
+    print()
