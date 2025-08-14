@@ -1,6 +1,7 @@
-from datetime import datetime
-now = datetime.now()
+n = int(input())
 
-print(now.year)
-print(now.month)
-print(now.day)
+result = 1
+for i in range(1, n+1):
+    result *= i
+
+print(result)
