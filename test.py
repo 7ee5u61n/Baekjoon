@@ -1,7 +1,6 @@
 n = int(input())
 
-result = 1
 for i in range(1, n+1):
-    result *= i
+    s = input()
 
-print(result)
+    print(f'{i}. {s}')
