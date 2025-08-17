@@ -1,13 +1,13 @@
-def is_prime(n):
-    end = int(n**(0.5))
-    for i in range(2, end+1):
-        if n % i == 0:
-            return False
-    return True
+s, n, m = map(int, input().split())
 
-n = int(input())
+arr = []
+for i in range(n+m):
+    o = int(input())
+    if o == 1:
+        if len(arr)+1 > s:
+            s *= 2
+        arr.append(o)
+    else:
+        arr.pop()
 
-for i in range(n, int(1e9)+1):
-    if is_prime(i) == False:
-        print(i)
-        break
+print(s)
