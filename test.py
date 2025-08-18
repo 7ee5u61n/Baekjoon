@@ -1,13 +1,14 @@
-s, n, m = map(int, input().split())
+import sys
+input = sys.stdin.readline
 
-arr = []
-for i in range(n+m):
-    o = int(input())
-    if o == 1:
-        if len(arr)+1 > s:
-            s *= 2
-        arr.append(o)
-    else:
-        arr.pop()
+n, q = map(int, input().split())
+arr = [0]*(n+1)
 
-print(s)
+for _ in range(q):
+    l, p, x = map(int, input().split())
+
+    if l == 1:
+        arr[p] += x
+    elif l == 2:
+        print(sum(arr[p:x+1]))
+    
