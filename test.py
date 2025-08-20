@@ -1,5 +1,7 @@
-n = int(input())
-arr = list(map(int, input().split()))
+j = str(input())
+d = str(input())
 
-print('YES')
-print(arr[0]*111)
+if len(j) >= len(d):
+    print("go")
+else:
+    print("no")
