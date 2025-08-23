@@ -1,4 +1,13 @@
-a, b = map(int, input().split())
-c, d = map(int, input().split())
+import sys
+input = sys.stdin.readline
 
-print(min((a+d), (b+c)))
+while True:
+    n, m = map(int, input().split())
+    if n == 0 and m == 0:
+        break
+
+    a = n//m
+    b = n % m
+    c = m
+
+    print(f'{a} {b} / {c}')
