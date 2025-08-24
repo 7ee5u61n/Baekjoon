@@ -1,13 +1,8 @@
-import sys
-input = sys.stdin.readline
-
-while True:
-    n, m = map(int, input().split())
-    if n == 0 and m == 0:
-        break
-
-    a = n//m
-    b = n % m
-    c = m
-
-    print(f'{a} {b} / {c}')
+for a in range(2, 101):
+    for b in range(2, 101):
+        for c in range(b+1, 101):
+            for d in range(c+1, 101):
+                if a**3 == b**3 + c**3 + d**3:
+                    print(f"Cube = {a}, Triple = ({b},{c},{d})")
+                if a**3 < b**3 + c**3 + d**3:
+                    break
