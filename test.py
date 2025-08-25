@@ -1,8 +1,21 @@
-for a in range(2, 101):
-    for b in range(2, 101):
-        for c in range(b+1, 101):
-            for d in range(c+1, 101):
-                if a**3 == b**3 + c**3 + d**3:
-                    print(f"Cube = {a}, Triple = ({b},{c},{d})")
-                if a**3 < b**3 + c**3 + d**3:
-                    break
+import sys
+input = sys.stdin.readline
+
+n = int(input())
+s = str(input().rstrip())
+
+a = 0
+b = 0
+
+for i in s:
+    if i == '2':
+        a += 1
+    else:
+        b += 1
+
+if a > b:
+    print('2')
+elif a < b:
+    print('e')
+else:
+    print('yee')
