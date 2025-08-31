@@ -1,9 +1,7 @@
-n = int(input())
-arr = list(map(int, input().split()))
+d1 = int(input())
+d2 = int(input())
 
-result = 0
-for i in range(len(arr)):
-    if arr[i] == n:
-        result += 1
+pi = 3.141592
+result = 2*d1+2*pi*d2
 
 print(result)
