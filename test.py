@@ -1,7 +1,9 @@
-d1 = int(input())
-d2 = int(input())
+s = str(input())
 
-pi = 3.141592
-result = 2*d1+2*pi*d2
-
-print(result)
+if s[0] == '"' and s[-1] == '"':
+    if s[1:-1]:
+        print(s[1:-1])
+    else:
+        print('CE')
+else:
+    print('CE')
