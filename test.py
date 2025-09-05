@@ -1,10 +1,6 @@
-print('     /~\\')
-print('    ( oo|')
-print('    _\\=/_')
-print('   /  _  \\')
-print('  //|/.\|\\\\')
-print(' ||  \\ /  ||')
-print('============')
-print('|          |')
-print('|          |')
-print('|          |')
+h, i, a, r, c = map(int, input().split())
+
+hi = h*i
+arc = a*r*c
+
+print(hi-arc)
