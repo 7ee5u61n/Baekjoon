@@ -1,6 +1,8 @@
-h, i, a, r, c = map(int, input().split())
+seminar = {'Algorithm': '204', 'DataAnalysis': '207', 'ArtificialIntelligence': '302', 'CyberSecurity': 'B101',
+           'Network': '303', 'Startup': '501', 'TestStrategy': '105'}
 
-hi = h*i
-arc = a*r*c
+n = int(input())
 
-print(hi-arc)
+for _ in range(n):
+    subject = input()
+    print(seminar[subject])
