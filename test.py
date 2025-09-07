@@ -1,8 +1,10 @@
-seminar = {'Algorithm': '204', 'DataAnalysis': '207', 'ArtificialIntelligence': '302', 'CyberSecurity': 'B101',
-           'Network': '303', 'Startup': '501', 'TestStrategy': '105'}
+x0, n = map(int, input().split())
+x = [x0]
 
-n = int(input())
+for i in range(n+1):
+    if x[i] % 2 == 0:
+        x.append((x[i]//2)^6)
+    else:
+        x.append((2*x[i])^6)
 
-for _ in range(n):
-    subject = input()
-    print(seminar[subject])
+print(x[n])
