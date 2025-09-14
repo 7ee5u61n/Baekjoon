@@ -1,21 +1,17 @@
-year, month, day = map(int, input().split())
-y, m, d = map(int, input().split())
+n = int(input())
+k = str(input())
 
-manAge = 0
-seneunAge = 0
-yeonAge = 0
+odd = 0
+even = 0
+for i in range(n):
+    if int(k[i]) % 2 == 0:
+        even += 1
+    else:
+        odd += 1
 
-manAge = y-year
-if month > m or (month == m and day > d):
-    manAge -= 1
-
-seneunAge = y-year+1
-
-if year == y:
-    yeonAge = 0
+if even > odd:
+    print(0)
+elif odd > even:
+    print(1)
 else:
-    yeonAge = y-year
-
-print(manAge)
-print(seneunAge)
-print(yeonAge)
+    print(-1)
