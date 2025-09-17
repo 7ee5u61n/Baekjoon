@@ -1,9 +1,6 @@
-n = int(input())
-
-for i in range(1, n):
-    print('*'*i+' '*(2*(n-i))+'*'*i)
-
-print('*'*(2*n))
-
-for i in range(n-1, 0, -1):
-    print('*'*i+' '*(2*(n-i))+'*'*i)
+print('SHIP NAME      CLASS          DEPLOYMENT IN SERVICE')
+print('N2 Bomber      Heavy Fighter  Limited    21        ')
+print('J-Type 327     Light Combat   Unlimited  1         ')
+print('NX Cruiser     Medium Fighter Limited    18        ')
+print('N1 Starfighter Medium Fighter Unlimited  25        ')
+print('Royal Cruiser  Light Combat   Limited    4         ')
