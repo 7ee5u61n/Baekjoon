@@ -1,2 +1,5 @@
-t1, t2 = map(int, input().split())
-print(min(t1, t2))
+s = str(input())
+
+result = len(s) + s.count(':') + s.count('_')*5
+
+print(result)
