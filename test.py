@@ -1,5 +1,5 @@
-s = str(input())
+a, p, c = map(int, input().split())
 
-result = len(s) + s.count(':') + s.count('_')*5
+result = max(a+c, p)
 
 print(result)
