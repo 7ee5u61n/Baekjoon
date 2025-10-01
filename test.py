@@ -1,14 +1,8 @@
-T = int(input())
-for _ in range(T):
-    yonsei, korea = 0, 0
-    for _ in range(9):
-        y, k = map(int, input().split())
-        yonsei += y
-        korea += k
+x = int(input())
 
-    if yonsei > korea:
-        print("Yonsei")
-    elif yonsei < korea:
-        print("Korea")
-    else:
-        print("Draw")
+if x % 3 == 1:
+    print('U')
+elif x % 3 == 2:
+    print('O')
+else:
+    print('S')
