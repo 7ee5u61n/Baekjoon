@@ -1,10 +1,13 @@
-print('가격: 원, 용량: ml, 도수: %. 순으로 입력')
-price = capacity = volume = 1
+n = int(input())
+
+count = 1
 while True:
-    price, capacity, volume = map(int, input().split())
-    if price and capacity and volume:
-        result = price / (capacity * volume)
-        print(f'가격: {price}원, 용량: {capacity}ml, 도수: {volume}%, 가격/알코올: {result:.2f}원/ml')
+    if n == 1:
+        break    
+    if n % 2 == 0:
+        n //= 2
     else:
-        print('종료합니다.')
-        break
+        n = n * 3 + 1
+    count += 1
+
+print(count)
