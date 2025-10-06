@@ -1,19 +1,13 @@
+date = list(map(int, input().split('-')))
 n = int(input())
-if n == 0:
-    print('divide by zero')
-else:
-    arr = list(map(int, input().split()))
 
-    avg = sum(arr) / n
-    
-    exp = 0
-    x = set(arr)
-    for i in x:
-        exp += i * arr.count(i)
-    exp /= n
-    
-    if exp == 0:
-        print('divide by zero')
-    else:
-        result = avg/exp
-        print(f'{result:.2f}')
+for i in range(n):
+    date[2] += 1
+    if date[2] > 30:
+        date[2] = 1
+        date[1] += 1
+        if date[1] > 12:
+            date[1] = 1
+            date[0] += 1
+
+print(f"{date[0]:04d}-{date[1]:02d}-{date[2]:02d}")
