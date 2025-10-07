@@ -1,13 +1,18 @@
-date = list(map(int, input().split('-')))
 n = int(input())
+a = list(map(str, input().split()))
+b = list(map(str, input().split()))
+
+x = ''
+y = ''
 
 for i in range(n):
-    date[2] += 1
-    if date[2] > 30:
-        date[2] = 1
-        date[1] += 1
-        if date[1] > 12:
-            date[1] = 1
-            date[0] += 1
+    x += a[i]
+    y += b[i]
 
-print(f"{date[0]:04d}-{date[1]:02d}-{date[2]:02d}")
+x = int(x)
+y = int(y)
+
+if x < y:
+    print(x)
+elif x >= y:
+    print(y)
