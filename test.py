@@ -1,18 +1,7 @@
-n = int(input())
-a = list(map(str, input().split()))
-b = list(map(str, input().split()))
+s = int(input())
+f = int(input())
 
-x = ''
-y = ''
-
-for i in range(n):
-    x += a[i]
-    y += b[i]
-
-x = int(x)
-y = int(y)
-
-if x < y:
-    print(x)
-elif x >= y:
-    print(y)
+if s <= f :
+    print('high speed rail')
+else:
+    print('flight')
