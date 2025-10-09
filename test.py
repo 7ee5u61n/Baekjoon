@@ -1,7 +1,6 @@
-s = int(input())
-f = int(input())
+a, b, c = map(int, input().split())
 
-if s <= f :
-    print('high speed rail')
-else:
-    print('flight')
+result1 = a*b/c
+result2 = a/b*c
+
+print(int(max(result1, result2)))
