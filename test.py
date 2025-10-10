@@ -1,6 +1,27 @@
-a, b, c = map(int, input().split())
+a = int(input())
+b = int(input())
+c = int(input())
+d = int(input())
+e = int(input())
 
-result1 = a*b/c
-result2 = a/b*c
+second = 0
+if a < 0:
+    frozen = True
+else:
+    frozen = False
 
-print(int(max(result1, result2)))
+while True:
+    if a == b:
+        break
+    
+    if a < 0:
+        a += 1
+        second += c
+    elif a == 0 and frozen:
+        frozen = False
+        second += d
+    else:
+        a += 1
+        second += e
+
+print(second)
