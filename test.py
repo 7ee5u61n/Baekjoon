@@ -1,27 +1,12 @@
-a = int(input())
-b = int(input())
-c = int(input())
-d = int(input())
-e = int(input())
+a, b = map(int, input().split())
+k, x = map(int, input().split())
 
-second = 0
-if a < 0:
-    frozen = True
-else:
-    frozen = False
-
-while True:
-    if a == b:
-        break
+result = 0
+for i in range(a, b + 1):
+    if abs(k - i) <= x:
+        result += 1
     
-    if a < 0:
-        a += 1
-        second += c
-    elif a == 0 and frozen:
-        frozen = False
-        second += d
-    else:
-        a += 1
-        second += e
-
-print(second)
+if result:
+    print(result)
+else:
+    print('IMPOSSIBLE')
