@@ -1,12 +1,11 @@
-a, b = map(int, input().split())
-k, x = map(int, input().split())
+import sys
+input = sys.stdin.readline
 
-result = 0
-for i in range(a, b + 1):
-    if abs(k - i) <= x:
-        result += 1
-    
-if result:
-    print(result)
+n = int(input())
+
+if -(2**15) <= n < 2**15:
+    print('short')
+elif -(2**31) <= n < 2**31:
+    print('int')
 else:
-    print('IMPOSSIBLE')
+    print('long long')
