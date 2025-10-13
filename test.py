@@ -1,11 +1,9 @@
-import sys
-input = sys.stdin.readline
+n, m, k = map(int, input().split())
 
-n = int(input())
+team = 0
+while n >= 2 and m >= 1 and n + m >= k + 3:
+    n -= 2
+    m -= 1
+    team += 1
 
-if -(2**15) <= n < 2**15:
-    print('short')
-elif -(2**31) <= n < 2**31:
-    print('int')
-else:
-    print('long long')
+print(team)
