@@ -1,10 +1,6 @@
-a, b = map(int, input().split())
+t, s = map(int, input().split())
 
-result = []
-
-for i in range(1, a+b+1):
-    if a % i == 0 and b % i == 0:
-        result.append([i, a // i, b // i])
-
-for i in result:
-    print(*i)
+if 12 <= t <= 16 and s == 0:
+    print(320)
+else:
+    print(280)
