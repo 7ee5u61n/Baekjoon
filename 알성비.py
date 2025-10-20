@@ -1,8 +1,12 @@
-s = str(input())
+n = int(input())
 
-result = 0
-for i in range(len(s)-3):
-    if s[i:i+4] == 'DKSH':
-        result += 1
+high = 0
+for _ in range(n):
+    a, d, g = map(int, input().split())
+    point = a*(d+g)
+    if a == d+g:
+        point *= 2
 
-print(result)
+    high = max(high, point)
+
+print(high)
