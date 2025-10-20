@@ -1,9 +1,10 @@
-n, m, k = map(int, input().split())
+T = int(input())
 
-team = 0
-while n >= 2 and m >= 1 and n + m >= k + 3:
-    n -= 2
-    m -= 1
-    team += 1
-
-print(team)
+for _ in range(T):
+    arr = list(map(int, input().split()))
+    h = max(arr[0]+arr[4], 1)
+    m = max(arr[1]+arr[5], 1)
+    a = max(arr[2]+arr[6], 0)
+    b = arr[3]+arr[7]
+    power = h+5*m+2*a+2*b
+    print(power)
