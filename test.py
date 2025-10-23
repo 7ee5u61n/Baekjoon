@@ -1,8 +1,10 @@
-n, a, b = map(int, input().split())
-
-if a < b:
-    print('Bus')
-elif a > b:
-    print('Subway')
+t = 0
+for _ in range(4):
+    ti =  int(input())
+    t += ti
+    
+if t <= 1500:
+    print('Yes')
 else:
-    print('Anything')
+    print('No')
+
