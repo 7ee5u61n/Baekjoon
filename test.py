@@ -7,3 +7,4 @@ elif a + c > b + d:
     print("Yongdap")
 else:
     print("Either")
+    
