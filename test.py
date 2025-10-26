@@ -1,4 +1,9 @@
-T = int(input())
-for _ in range(T):
-    v, e = map(int, input().split())
-    print(e - v + 2)
+result = 0
+while True:
+    n = int(input())
+    if n == -1:
+        break
+
+    result += n
+
+print(result)
