@@ -1,9 +1,11 @@
-result = 0
-while True:
-    n = int(input())
-    if n == -1:
-        break
+type = {'in-out': ['fdsajkl;', 'jkl;fdsa'], 'out-in': ['asdf;lkj', ';lkjasdf'],
+        'stairs': ['asdfjkl;'], 'reverse': [';lkjfdsa']}
 
-    result += n
+s = str(input())
 
-print(result)
+for k, v in type.items():
+    if s in v:
+        print(k)
+        exit()
+
+print('molu')
