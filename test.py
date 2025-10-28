@@ -1,11 +1,10 @@
-type = {'in-out': ['fdsajkl;', 'jkl;fdsa'], 'out-in': ['asdf;lkj', ';lkjasdf'],
-        'stairs': ['asdfjkl;'], 'reverse': [';lkjfdsa']}
+n = int(input())
+line = str(input())
 
-s = str(input())
+result = True
+for i in range(n*2-1):
+    if line[i] == line[i+1]:
+        result = False
+        break
 
-for k, v in type.items():
-    if s in v:
-        print(k)
-        exit()
-
-print('molu')
+print("Yes" if result else "No")
