@@ -1,6 +1,6 @@
-import sys
-input = sys.stdin.readline
+n = int(input())
+for _ in range(n):
+    a, b, x = map(int, input().split())
+    w = a*(x-1)+b
 
-n, m = map(int, input().split())
-
-print(abs(n-m))
+    print(w)
