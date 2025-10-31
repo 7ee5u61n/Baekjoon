@@ -1,6 +1,8 @@
-n = int(input())
-for _ in range(n):
-    a, b, x = map(int, input().split())
-    w = a*(x-1)+b
+n, u, l = map(int, input().split())
 
-    print(w)
+if n >= 1000 and (u >= 8000 or l >= 260):
+    print('Very Good')
+elif n >= 1000 and u < 8000 and l < 260:
+    print('Good')
+else:
+    print('Bad')
