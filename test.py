@@ -1,8 +1,11 @@
-n, u, l = map(int, input().split())
+n = int(input())
 
-if n >= 1000 and (u >= 8000 or l >= 260):
-    print('Very Good')
-elif n >= 1000 and u < 8000 and l < 260:
-    print('Good')
-else:
-    print('Bad')
+result = 0
+for _ in range(n):
+    s = str(input())
+    for i in range(len(s)-1):
+        if s[i:i+2] == '01' or s[i:i+2] == 'OI':
+            result += 1
+            break
+
+print(result)
