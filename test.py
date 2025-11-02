@@ -1,11 +1,14 @@
 n = int(input())
 
-result = 0
-for _ in range(n):
-    s = str(input())
-    for i in range(len(s)-1):
-        if s[i:i+2] == '01' or s[i:i+2] == 'OI':
-            result += 1
-            break
+arr1 = []
+for i in range(n):
+    arr1.append(int(input()))
 
-print(result)
+arr2 = sorted(arr1)
+
+if arr1[0] == arr2[0]:
+    print('ez')
+elif arr1[0] == arr2[-1]:
+    print('hard')
+else:
+    print('?')
