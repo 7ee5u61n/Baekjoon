@@ -1,14 +1,16 @@
-n = int(input())
+T = int(input())
+for _ in range(T):
+    arr = list(map(int, input().split()))
+    max_val = max(arr)
+    min_val = min(arr)
 
-arr1 = []
-for i in range(n):
-    arr1.append(int(input()))
+    arr.remove(max_val)
+    arr.remove(min_val)
 
-arr2 = sorted(arr1)
+    max_val = max(arr)
+    min_val = min(arr)
 
-if arr1[0] == arr2[0]:
-    print('ez')
-elif arr1[0] == arr2[-1]:
-    print('hard')
-else:
-    print('?')
+    if max_val - min_val >= 4:
+        print('KIN')
+    else:
+        print(sum(arr))
