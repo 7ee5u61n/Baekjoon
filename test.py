@@ -1,16 +1,18 @@
-T = int(input())
-for _ in range(T):
-    arr = list(map(int, input().split()))
-    max_val = max(arr)
-    min_val = min(arr)
+s = str(input())
+k = str(input())
 
-    arr.remove(max_val)
-    arr.remove(min_val)
+temp = ''
+for i in s:
+    if i.isalpha():
+        temp += i
 
-    max_val = max(arr)
-    min_val = min(arr)
-
-    if max_val - min_val >= 4:
-        print('KIN')
-    else:
-        print(sum(arr))
+result = False
+for i in range(len(temp)-len(k)+1):
+    if temp[i:i+len(k)] == k:
+        result = True
+        break
+        
+if result:
+    print(1)
+else:
+    print(0)
