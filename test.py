@@ -1,8 +1,3 @@
-ax, ay, az = map(int, input().split())
-cx, cy, cz = map(int, input().split())
+x = input()
 
-bx = cx - az
-by = cy // ay
-bz = cz - ax
-
-print(bx, by, bz)
+print('FA')
