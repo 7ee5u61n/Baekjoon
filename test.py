@@ -1,3 +1,3 @@
-x = input()
+arr = list(map(int, input().split()))
 
-print('FA')
+print(sum(arr))
