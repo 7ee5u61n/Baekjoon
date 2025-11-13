@@ -1,3 +1,6 @@
-print('.  .   .')
-print('|  | _ | _. _ ._ _  _')
-print('|/\\|(/.|(_.(_)[ | )(/.')
+s = str(input())
+
+if s == 'N' or s == 'n':
+   print('Naver D2')
+else:
+   print('Naver Whale')
