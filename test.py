@@ -1,13 +1,16 @@
-n, m = map(int, input().split())
+t, x = map(int, input().split())
 
-result = []
-for i in range(1000):
-    for j in range(1000):
-        if i + j == n and i - j == m:
-            result = [i, j]
-            break
-result = sorted(result, reverse=True)
+n = int(input())
+
+result = True
+for _ in range(n):
+    k = int(input())
+    a = set(map(int, input().split()))
+    
+    if x not in a:
+        result = False
+
 if result:
-    print(*result)
+    print("YES")
 else:
-    print(-1)
+    print("NO")
