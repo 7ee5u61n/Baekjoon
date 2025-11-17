@@ -1,16 +1,15 @@
-t, x = map(int, input().split())
+n, m = map(int, input().split())
 
-n = int(input())
+board = [int(input()) for _ in range(n)]
 
-result = True
-for _ in range(n):
-    k = int(input())
-    a = set(map(int, input().split()))
-    
-    if x not in a:
-        result = False
+result = 0
+locate = 0
+for j in range(m):
+    dice = int(input())
+    locate += dice
+    locate += board[locate%n]
 
-if result:
-    print("YES")
-else:
-    print("NO")
+    if locate >= n-1 and result == 0:
+        result = j + 1
+
+print(result)
