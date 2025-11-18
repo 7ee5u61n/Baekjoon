@@ -1,15 +1,6 @@
-n, m = map(int, input().split())
+n = int(input())
 
-board = [int(input()) for _ in range(n)]
-
-result = 0
-locate = 0
-for j in range(m):
-    dice = int(input())
-    locate += dice
-    locate += board[locate%n]
-
-    if locate >= n-1 and result == 0:
-        result = j + 1
-
-print(result)
+for _ in range(n):
+    s = str(input())
+    if s[:10] == 'Simon says':
+        print(s[10:])
