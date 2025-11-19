@@ -1,6 +1,5 @@
-n = int(input())
-
-for _ in range(n):
-    s = str(input())
-    if s[:10] == 'Simon says':
-        print(s[10:])
+print("       _.-;;-._")
+print("'-..-'|   ||   |")
+print("'-..-'|_.-;;-._|")
+print("'-..-'|   ||   |")
+print("'-..-'|_.-''-._|")
