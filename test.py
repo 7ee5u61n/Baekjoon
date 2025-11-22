@@ -1,4 +1,6 @@
-n = int(input())
+x, y = map(int, input().split())
 
-for _ in range(n):
-    print('LoveisKoreaUniversity', end=' ')
+if x > y:
+    print(x+y)
+else:
+    print(y-x)
