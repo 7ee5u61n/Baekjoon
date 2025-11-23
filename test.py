@@ -1,6 +1,8 @@
-x, y = map(int, input().split())
+T = int(input())
 
-if x > y:
-    print(x+y)
-else:
-    print(y-x)
+for _ in range(T):
+    n = str(input())
+    if (int(n)+1) % int(n[2:]):
+        print('Bye')
+    else:
+        print('Good')
