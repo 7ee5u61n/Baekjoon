@@ -1,9 +1,6 @@
-x1, y1, r1 = map(int, input().split())
-x2, y2, r2 = map(int, input().split())
+a, m = map(int, input().split())
 
-d = ((x1 - x2) ** 2 + (y1 - y2) ** 2) ** 0.5
-
-if d < r1 + r2:
-    print("YES")
-else:
-    print("NO")
+for i in range(1, 10001):
+    if a*i % m == 1:
+        print(i)
+        break
