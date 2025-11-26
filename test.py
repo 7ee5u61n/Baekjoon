@@ -1,17 +1,6 @@
-while True:
-    try:
-        n = int(input())
-    except:
-        break
+n, k = map(int, input().split())
 
-    count = 1
-    number = set()
-    while True:
-        temp = n * count
-        for digit in str(temp):
-            number.add(int(digit))
-        if len(number) == 10:
-            break
-        count += 1
+for _ in range(n):
+    a, b = map(int, input().split())
 
-    print(count)
+print('비와이')
