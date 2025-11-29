@@ -1,7 +1,4 @@
-a = str(input())
-b = str(input())
+arr = list(map(int, input().split()))
+arr.sort()
 
-if a == b:
-    print(0)
-else:
-    print(1550)
+print(*arr)
