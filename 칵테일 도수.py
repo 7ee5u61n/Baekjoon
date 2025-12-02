@@ -1,9 +1,16 @@
+print('재료 개수')
 n = int(input())
-st = str(input())
 
-result = 0
-for i in range(n//2):
-    if st[i] != st[n-i-1]:
-        result += 1
+numerator = 0
+denominator = 0
+for i in range(n):
+    print('용량, 도수')
+    a, b = map(int, input().split())
+    numerator += (a*b)
+    denominator += a
 
-print(result)
+volume = round(numerator/denominator, 1)
+alcohol = round(volume*0.01*denominator*0.785)
+
+print('도수: %, 알코올량: g')
+print(volume, alcohol)
