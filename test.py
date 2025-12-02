@@ -1,8 +1,12 @@
-n = int(input())
+k, n = map(int, input().split())
 
-result = 0
-for i in range(1, n+1):
-    if n % i == 0:
-        result += i
+# (x - k) * n >= x
+# x >= (k * n) / (n - 1)
 
-print(result*5-24)
+if n == 1:
+    print(-1)
+else:
+    x = (k * n) // (n - 1)
+    if ((k * n) % (n - 1)):
+        x += 1
+    print(x)
