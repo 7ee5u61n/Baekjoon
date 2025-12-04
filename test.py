@@ -1,7 +1,6 @@
-question = {'animal': 'Panthera tigris', 'tree': 'Pinus densiflora', 'flower': 'Forsythia koreana'}
-while True:
-    s = str(input())
-    if s == 'end':
-        break
-    else:
-        print(question[s])
+n = int(input())
+
+if n**2 <= 10**8:
+    print('Accepted')
+else:
+    print('Time limit exceeded')
