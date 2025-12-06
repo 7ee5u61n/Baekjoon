@@ -1,9 +1,11 @@
-s = str(input())
-if s[0] == 'F':
-    print('Foundation')
-elif s[0] == 'C':
-    print('Claves')
-elif s[0] == 'V':
-    print('Veritas')
-elif s[0] == 'E':
-    print('Exploration')
+n, m = map(int, input().split())
+
+a = 100 - n
+b = 100 - m
+c = 100 - (a+b)
+d = a*b
+q = d//100
+r = d%100
+
+print(a, b, c, d, q, r)
+print(c+q, r)
