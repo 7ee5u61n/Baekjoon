@@ -1,5 +1,8 @@
-arr = list(map(int, input().split()))
+a, b = map(int, input().split())
 
-arr.sort()
+result = 1
+for i in range(a, b+1):
+    temp = i*(i+1)//2
+    result *= temp
 
-print(arr[0]*arr[2])
+print(result%14579)
