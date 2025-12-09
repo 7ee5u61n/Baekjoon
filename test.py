@@ -1,8 +1,8 @@
-a, b = map(int, input().split())
+n = int(input())
+n //= 3
 
-result = 1
-for i in range(a, b+1):
-    temp = i*(i+1)//2
-    result *= temp
+result = 0
+for i in range(n-1):
+    result += i
 
-print(result%14579)
+print(result)
