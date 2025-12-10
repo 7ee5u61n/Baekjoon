@@ -1,8 +1,3 @@
-n = int(input())
-n //= 3
+a, b = map(int, input().split())
 
-result = 0
-for i in range(n-1):
-    result += i
-
-print(result)
+print(min((a//2), b))
