@@ -1,13 +1,9 @@
-import sys
-input = sys.stdin.readline
-
 T = int(input())
 
-for test_case in range(1, T+1):
-    n = int(input())
-    a, b = map(int, input().split())
-    for _ in range(n):
-        ui, vi = map(int, input().split())
-    
-    print(f'Material Management {test_case}')
-    print('Classification ---- End!')
+for _ in range(T):
+    s = str(input())
+    for i in range(len(s)):
+        print(s[i], end='')
+        if s[i:i+2] == 'PO':
+            print('H', end='')
+    print('')
