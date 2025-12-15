@@ -1,9 +1,12 @@
-T = int(input())
+a = int(input())
+b = int(input())
+c = int(input())
 
-for _ in range(T):
-    s = str(input())
-    for i in range(len(s)):
-        print(s[i], end='')
-        if s[i:i+2] == 'PO':
-            print('H', end='')
-    print('')
+abc = str(a * b * c)
+
+result = [0]*10
+for i in abc:
+    result[int(i)] += 1
+
+for i in range(10):
+    print(result[i])
