@@ -1,12 +1,8 @@
-a = int(input())
-b = int(input())
-c = int(input())
+import sys
+input = sys.stdin.readline
 
-abc = str(a * b * c)
+n = int(input())
 
-result = [0]*10
-for i in abc:
-    result[int(i)] += 1
-
-for i in range(10):
-    print(result[i])
+for _ in range(n):
+    k = int(input())
+    print(1)
