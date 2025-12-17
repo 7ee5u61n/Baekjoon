@@ -1,8 +1,5 @@
-import sys
-input = sys.stdin.readline
+s, t, d = map(int, input().split())
 
-n = int(input())
+f = d//(2*s)*t
 
-for _ in range(n):
-    k = int(input())
-    print(1)
+print(f)
