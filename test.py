@@ -1,9 +1,8 @@
-T = int(input())
-for _ in range(T):
-    n, d = map(int, input().split())
-    result = 0
-    for _ in range(n):
-        v, f, c = map(int, input().split())
-        if v * (f/c) >= d:
-            result += 1
-    print(result)
+n = int(input())
+
+arr = [i for i in range(1, n+1)]
+
+while len(arr) > 1:
+    arr = [arr[i] for i in range(1, len(arr), 2)]
+
+print(arr[0])
