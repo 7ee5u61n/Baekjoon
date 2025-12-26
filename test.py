@@ -1,9 +1,9 @@
-a, b, c = map(int, input().split())
-d = int(input())
+s, d, i, l, n = map(int, input().split())
+avg = (s + d + i + l) / 4
 
-total_seconds = a * 3600 + b * 60 + c + d
-new_hour = (total_seconds // 3600) % 24
-new_minute = (total_seconds % 3600) // 60
-new_second = total_seconds % 60
+result = 0
+while avg < n:
+    avg += 0.25
+    result += 1
 
-print(new_hour, new_minute, new_second)
+print(result)
