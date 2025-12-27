@@ -1,9 +1,13 @@
-s, d, i, l, n = map(int, input().split())
-avg = (s + d + i + l) / 4
-
-result = 0
-while avg < n:
-    avg += 0.25
-    result += 1
-
-print(result)
+for i in range(10, 101):
+    i = str(i)
+    if int(i[::-1]) % 4 != 0:
+        continue
+    value = 0
+    for j in range(len(i)):
+        value += int(i[j])
+    if value % 6 != 0:
+        continue
+    if i in '8':
+        continue
+    print(i)
+    break
