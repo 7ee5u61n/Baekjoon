@@ -1,13 +1,10 @@
-for i in range(10, 101):
-    i = str(i)
-    if int(i[::-1]) % 4 != 0:
-        continue
-    value = 0
-    for j in range(len(i)):
-        value += int(i[j])
-    if value % 6 != 0:
-        continue
-    if i in '8':
-        continue
-    print(i)
-    break
+import sys
+input = sys.stdin.readline
+
+T = int(input())
+for _ in range(T):
+    n = int(input())
+    result = 0
+    for _ in range(n):
+        result += max(0, max(list(map(int, input().split()))))
+    print(result)
