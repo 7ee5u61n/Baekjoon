@@ -1,10 +1,11 @@
-import sys
-input = sys.stdin.readline
+n, m = map(int, input().split())
+a = list(map(int, input().split()))
 
-T = int(input())
-for _ in range(T):
-    n = int(input())
-    result = 0
-    for _ in range(n):
-        result += max(0, max(list(map(int, input().split()))))
-    print(result)
+stress = 0
+result = 0
+for i in range(n):
+    stress = max(0, stress + a[i])
+    if stress >= m:
+        result += 1
+    
+print(result)
