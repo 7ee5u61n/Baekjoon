@@ -1,11 +1,12 @@
-n, m = map(int, input().split())
-a = list(map(int, input().split()))
+while True:
+    try:
+        m, p, l, e, r, s, n = map(int, input().split())
+    except:
+        break
+    for i in range(n):
+        mp = m
+        m = p//s
+        p = l//r
+        l = mp*e
 
-stress = 0
-result = 0
-for i in range(n):
-    stress = max(0, stress + a[i])
-    if stress >= m:
-        result += 1
-    
-print(result)
+    print(m)
