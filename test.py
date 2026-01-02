@@ -1,4 +1,7 @@
-T = int(input())
-for i in range(1, T+1):
-    a, b = map(int, input().split())
-    print(f"Case {i}: {a+b}")
+s = 'SciComLove'
+n = int(input())
+
+if n % 2:
+    print(s[::-1])
+else:
+    print(s)
