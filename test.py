@@ -1,7 +1,7 @@
-s = 'SciComLove'
-n = int(input())
-
-if n % 2:
-    print(s[::-1])
-else:
-    print(s)
+T = int(input())
+for _ in range(T):
+    t = int(input())
+    if t % 25 < 17:
+        print("ONLINE")
+    else:
+        print("OFFLINE")
