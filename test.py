@@ -1,21 +1,18 @@
-n = int(input())
-arr = list(map(int, input().split()))
+alphabet = {
+    'A': 3, 'B': 2, 'C': 1, 'D': 2, 'E': 3,
+    'F': 3, 'G': 3, 'H': 3, 'I': 1, 'J': 1,
+    'K': 3, 'L': 1, 'M': 3, 'N': 3, 'O': 1,
+    'P': 2, 'Q': 2, 'R': 2, 'S': 1, 'T': 2,
+    'U': 1, 'V': 1, 'W': 2, 'X': 2, 'Y': 2,
+    'Z': 1
+}
 
-connected = 0
-battery = 0
-previous_battery = 2
-for i in range(n):
-    # 이미 연결되어 있는 핸드폰에 연결
-    if connected == arr[i]:
-        # 직전 배터리 소모량의 2배
-        previous_battery *= 2
-        battery += previous_battery
-    # 새로운 핸드폰 연결
-    else:
-        connected = arr[i]
-        battery += 2
-        previous_battery = 2
-    if battery >= 100:
-        connected = 0
-        battery = 0
-print(battery)
+s = str(input())
+result = 0
+for i in s:
+    result += alphabet[i]
+
+if result % 2:
+    print("I'm a winner!")
+else:
+    print("You're the winner?")
