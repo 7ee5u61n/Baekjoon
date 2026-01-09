@@ -1,7 +1,5 @@
-a, b = map(int, input().split())
-c = int(input())
-
-if a+b >= c*2:
-    print(a+b-c*2)
-else:
-    print(a+b)
+T = int(input())
+for _ in range(T):
+    n = int(input())
+    print('++++ '*(n//5), end='')
+    print('|'*(n%5))
