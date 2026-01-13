@@ -1,8 +1,7 @@
-T = int(input())
-for _ in range(T):
-    n = int(input())
-    n = bin(n)[2:]
-    for i in range(len(n)-1, -1, -1):
-        if n[i] == '1':
-            print(len(n)-i-1, end=' ')
-    print()
+n = int(input())
+arr = []
+for i in range(n):
+    x, y = map(int, input().split())
+    arr.append(y)
+
+print(max(arr)-min(arr))
