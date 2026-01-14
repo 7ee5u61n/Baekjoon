@@ -1,7 +1,5 @@
-n = int(input())
-arr = []
-for i in range(n):
-    x, y = map(int, input().split())
-    arr.append(y)
+l, p = map(int, input().split())
+arr = list(map(int, input().split()))
 
-print(max(arr)-min(arr))
+for i in range(5):
+    print(arr[i] - (l*p), end=' ')
