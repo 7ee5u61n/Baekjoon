@@ -1,5 +1,3 @@
-x, y = map(int, input().split())
-repunit1 = int('1' * x)
-repunit2 = int('1' * y)
-
-print(repunit1 + repunit2)
+n = int(input())
+arr = list(map(int, input().split()))
+print(arr[1]-arr[0]+arr[-1])
