@@ -1,3 +1,5 @@
 n = int(input())
-arr = list(map(int, input().split()))
-print(arr[1]-arr[0]+arr[-1])
+print('@'*(n+2))
+for _ in range(n):
+    print('@' + ' ' * n + '@')
+print('@'*(n+2))
