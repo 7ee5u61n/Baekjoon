@@ -1,17 +1,10 @@
-n = int(input())
+p = list(map(int, input().split()))
+x, y, r = map(int, input().split())
 
-n = 1000 - n
 result = 0
-result += n // 500
-n %= 500
-result += n // 100
-n %= 100
-result += n // 50   
-n %= 50
-result += n // 10
-n %= 10
-result += n // 5
-n %= 5
-result += n // 1
+for i in range(len(p)):
+    if p[i] == x:
+        result = i+1
+        break
 
 print(result)
