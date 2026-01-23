@@ -1,19 +1,9 @@
-s1 = str(input())
-s2 = str(input())
-s3 = str(input())
+n, m, a, b = map(int, input().split())
 
-glob = ['l', 'k', 'p']
+purchase = n*3-m
+result = 0
 
-result = False
-if s1[0] in glob:
-    glob.remove(s1[0])
-    if s2[0] in glob:
-        glob.remove(s2[0])
-        if s3[0] in glob:
-            glob.remove(s3[0])
-            result = True
+if purchase > 0:
+    result = purchase*a+b
 
-if result:
-    print("GLOBAL")
-else:
-    print("PONIX")
+print(result)
