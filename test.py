@@ -1,9 +1,12 @@
-n, m, a, b = map(int, input().split())
+a, b, c = map(int, input().split())
 
-purchase = n*3-m
+n = int(input())
 result = 0
-
-if purchase > 0:
-    result = purchase*a+b
+for _ in range(n):
+    teamPoint = 0
+    for _ in range(3):
+        x, y, z = map(int, input().split())
+        teamPoint += x * a + y * b + z * c
+    result = max(result, teamPoint)
 
 print(result)
