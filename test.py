@@ -1,12 +1,12 @@
-a, b, c = map(int, input().split())
+import sys
+input = sys.stdin.readline
 
-n = int(input())
-result = 0
-for _ in range(n):
-    teamPoint = 0
-    for _ in range(3):
-        x, y, z = map(int, input().split())
-        teamPoint += x * a + y * b + z * c
-    result = max(result, teamPoint)
+n, m = map(int, input().split())
+classmate = [0] * (n + 1)
+for _ in range(m):
+    a, b = map(int, input().split())
+    classmate[a] += 1
+    classmate[b] += 1
 
-print(result)
+for i in range(1, n + 1):
+    print(classmate[i])
