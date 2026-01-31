@@ -1,9 +1,10 @@
-jinho = str(input())
-n = int(input())
-result = 0
-for _ in range(n):
-    mbti = str(input())
-    if mbti == jinho:
-        result += 1
+socks = [0]*10
 
-print(result)
+for i in range(5):
+    n = int(input())
+    socks[n] += 1
+
+for i in range(10):
+    if socks[i] % 2 == 1:
+        print(i)
+        break
