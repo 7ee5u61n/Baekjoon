@@ -1,10 +1,17 @@
-socks = [0]*10
+a, b, c, d = map(int, input().split())
 
-for i in range(5):
-    n = int(input())
-    socks[n] += 1
+shuttle = False
+walk = False
+if a+b <= d:
+    shuttle = True
+if c <= d:
+    walk = True
 
-for i in range(10):
-    if socks[i] % 2 == 1:
-        print(i)
-        break
+if shuttle and walk:
+    print('~.~')
+elif shuttle:
+    print('Shuttle')
+elif walk:
+    print('Walk')
+else:
+    print('T.T')
