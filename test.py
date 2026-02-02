@@ -1,17 +1,9 @@
-a, b, c, d = map(int, input().split())
+a, d, k = map(int, input().split())
 
-shuttle = False
-walk = False
-if a+b <= d:
-    shuttle = True
-if c <= d:
-    walk = True
-
-if shuttle and walk:
-    print('~.~')
-elif shuttle:
-    print('Shuttle')
-elif walk:
-    print('Walk')
-else:
-    print('T.T')
+for i in range(1, int(1e6)+2):
+    if a == k:
+        print(i)
+        break
+    a += d
+if a != k:
+    print('X')
