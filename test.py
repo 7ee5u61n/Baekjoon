@@ -1,9 +1,7 @@
-a, d, k = map(int, input().split())
-
-for i in range(1, int(1e6)+2):
-    if a == k:
-        print(i)
+n = int(input())
+st = str(input())
+for i in range(n):
+    st[i:]
+    if st[i:].count('s') == st[i:].count('t'):
+        print(st[i:])
         break
-    a += d
-if a != k:
-    print('X')
