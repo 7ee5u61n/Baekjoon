@@ -1,7 +1,10 @@
-n = int(input())
-st = str(input())
-for i in range(n):
-    st[i:]
-    if st[i:].count('s') == st[i:].count('t'):
-        print(st[i:])
-        break
+s, k, h = map(int, input().split())
+if s+k+h >= 100:
+    print('OK')
+else:
+    if min(s, k, h) == s:
+        print('Soongsil')
+    elif min(s, k, h) == k:
+        print('Korea')
+    else:
+        print('Hanyang')
