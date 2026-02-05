@@ -1,10 +1,10 @@
-s, k, h = map(int, input().split())
-if s+k+h >= 100:
-    print('OK')
-else:
-    if min(s, k, h) == s:
-        print('Soongsil')
-    elif min(s, k, h) == k:
-        print('Korea')
-    else:
-        print('Hanyang')
+n = int(input())
+a = list(map(int, input().split()))
+b = list(map(int, input().split()))
+
+result = 0
+for i in range(n):
+    if a[i] <= b[i]:
+        result += 1
+
+print(result)
