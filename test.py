@@ -1,10 +1,13 @@
 n = int(input())
-a = list(map(int, input().split()))
-b = list(map(int, input().split()))
 
-result = 0
-for i in range(n):
-    if a[i] <= b[i]:
-        result += 1
+times = set()
+for i in range(2, 10):
+    for j in range(1, 10):
+        times.add(i)
+        times.add(j)
+        times.add(i * j)
 
-print(result)
+if n in times:
+    print(1)
+else:
+    print(0)
