@@ -1,13 +1,9 @@
-n = int(input())
+a = 'SciComLove'
+s = str(input())
 
-times = set()
-for i in range(2, 10):
-    for j in range(1, 10):
-        times.add(i)
-        times.add(j)
-        times.add(i * j)
+result = 0
+for i in range(len(a)):
+    if a[i] != s[i]:
+        result += 1
 
-if n in times:
-    print(1)
-else:
-    print(0)
+print(result)
