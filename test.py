@@ -1,3 +1,6 @@
-n = int(input())
-for i in range(1, n+1):
-    print(' ' * (n - i) + '* ' * (i-1) + '*')
+n, m, k = map(int, input().split())
+
+mn = max(n-(m*k), 0)
+mx = n-m*(k-1)-1
+
+print(mn, mx)
