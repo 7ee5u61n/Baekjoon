@@ -1,9 +1,12 @@
-a = str(input())
-b = str(input())
-c = str(input())
+import sys
+input = sys.stdin.readline
 
-for a in range(1, 11):
-    for b in range(1, 11):
-        for c in range(1, 11):
-            for d in range(1, 11):
-                print(-1)
+q = int(input())
+for _ in range(q):
+    a = int(input())
+    b = int(bin(a)[2:])
+    
+    if b&(~b+1) == a:
+        print(1)
+    else:
+        print(0)
