@@ -1,5 +1,8 @@
-import math
+n = int(input())
+college = []
+for i in range(n):
+    name, year = input().split()
+    college.append((name, int(year)))
 
-n, m = map(int, input().split())
-
-print(math.ceil(n / m))
+college.sort(key=lambda x: -x[1])
+print(college[0][0])
