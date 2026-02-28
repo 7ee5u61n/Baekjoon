@@ -1,15 +1,6 @@
 n = int(input())
-yonsei = 0
-korea = 0
 
-for i in range(n):
-    university = input()
-    if university == "yonsei":
-        yonsei = i
-    elif university == "korea":
-        korea = i
-
-if yonsei < korea:
-    print("Yonsei Won!")
+if n % 2:
+    print(1)
 else:
-    print("Yonsei Lost...")
+    print(2)
