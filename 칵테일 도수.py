@@ -1,6 +1,8 @@
 n = int(input())
+arr = list(map(int, input().split()))
+set_arr = set(arr)
 
-if n % 2:
+if len(arr) == len(set_arr):
     print(1)
 else:
-    print(2)
+    print(0)
