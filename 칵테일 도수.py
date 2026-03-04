@@ -1,13 +1,16 @@
+print('재료 개수')
 n = int(input())
 
-candidate = [['PROBRAIN', 0], ['GROW', 0], ['ARGOS', 0], 
-             ['ADMIN', 0], ['ANT', 0], ['MOTION', 0], 
-             ['SPG', 0], ['COMON', 0], ['ALMIGHTY', 0]]
+numerator = 0
+denominator = 0
+for i in range(n):
+    print('용량, 도수')
+    a, b = map(int, input().split())
+    numerator += (a*b)
+    denominator += a
 
-for i in range(9):
-    solve = list(map(int, input().split()))
-    candidate[i][1] = max(solve)
+volume = round(numerator/denominator, 1)
+alcohol = round(volume*0.01*denominator*0.785)
 
-candidate.sort(key=lambda x: (-x[1]))
-
-print(candidate[0][0])
+print('도수: %, 알코올량: g')
+print(volume, alcohol)

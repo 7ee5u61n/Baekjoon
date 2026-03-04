@@ -1,8 +1,10 @@
-n = int(input())
-college = []
-for i in range(n):
-    name, year = input().split()
-    college.append((name, int(year)))
-
-college.sort(key=lambda x: -x[1])
-print(college[0][0])
+vowel = {'a', 'e', 'i', 'o', 'u'}
+while True:
+    word = str(input()).lower()
+    if word == '#':
+        break
+    count = 0
+    for w in word:
+        if w in vowel:
+            count += 1
+    print(count)
