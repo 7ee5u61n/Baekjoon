@@ -1,10 +1,5 @@
-vowel = {'a', 'e', 'i', 'o', 'u'}
-while True:
-    word = str(input()).lower()
-    if word == '#':
-        break
-    count = 0
-    for w in word:
-        if w in vowel:
-            count += 1
-    print(count)
+n, m, k = map(int, input().split())
+
+o = max(0, m-k)
+x = max(0, (n-m)-(n-k))
+print(n - (o + x))
