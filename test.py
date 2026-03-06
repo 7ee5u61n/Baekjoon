@@ -1,5 +1,13 @@
-n, m, k = map(int, input().split())
+n = int(input())
+w = int(input())
 
-o = max(0, m-k)
-x = max(0, (n-m)-(n-k))
-print(n - (o + x))
+point = 0
+point += n * 10
+if n >= 3:
+    point += 20
+if n == 5:
+    point += 50
+if w > 1000:
+    point = max(0, point - 15)
+
+print(point)
