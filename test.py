@@ -1,13 +1,12 @@
+m = list(map(int, input().split()))
 n = int(input())
-w = int(input())
 
-point = 0
-point += n * 10
-if n >= 3:
-    point += 20
-if n == 5:
-    point += 50
-if w > 1000:
-    point = max(0, point - 15)
+result = 0
+for i in range(n):
+    b, l, s = map(float, input().split())
+    b = int(b)
+    s = int(s)
+    if s >= 17 and l >= 2.0:
+        result += m[b]
 
-print(point)
+print(result)
