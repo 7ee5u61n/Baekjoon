@@ -1,10 +1,11 @@
-n = int(input())
-student = list(map(int, input().split()))
+ignore = {'i', 'pa', 'te', 'ni', 'niti', 'a', 'ali', 'nego', 'no', 'ili'}
 
-line = [x for x in range(1, n+1)]
-result = 0
-for i in range(n):
-    if student[i] != line[i]:
-        result += 1
+s = list(map(str, input().split()))
+
+result = ''
+for i in range(len(s)):
+    if i > 0 and s[i] in ignore:
+        continue
+    result += s[i][0].upper()
 
 print(result)
