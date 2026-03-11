@@ -1,11 +1,13 @@
-ignore = {'i', 'pa', 'te', 'ni', 'niti', 'a', 'ali', 'nego', 'no', 'ili'}
+n = int(input())
+m = list(map(int, input().split()))
 
-s = list(map(str, input().split()))
+for i in range(n):
+    if m[i] == 300:
+        print(1, end=' ')
+    elif m[i] >= 275:
+        print(2, end=' ')
+    elif m[i] >= 250:
+        print(3, end=' ')
+    else:
+        print(4, end=' ')
 
-result = ''
-for i in range(len(s)):
-    if i > 0 and s[i] in ignore:
-        continue
-    result += s[i][0].upper()
-
-print(result)
