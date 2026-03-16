@@ -1,9 +1,21 @@
+import sys
+input = sys.stdin.readline
+
 n = int(input())
-if n >= 1000000:
-    print(int(n*0.20), int(n*0.80))
-elif n >= 500000:
-    print(int(n*0.15), int(n*0.85))
-elif n >= 100000:
-    print(int(n*0.10), int(n*0.90))
-else:
-    print(int(n*0.05), int(n*0.95))
+q = [0] * 5
+for _ in range(n):
+    x, y = map(int, input().split())
+    if x > 0 and y > 0:
+        q[0] += 1
+    elif x < 0 and y > 0:
+        q[1] += 1
+    elif x < 0 and y < 0:
+        q[2] += 1
+    elif x > 0 and y < 0:
+        q[3] += 1
+    else:
+        q[4] += 1
+
+for i in range(4):
+    print(f"Q{i + 1}: {q[i]}")
+print(f"AXIS: {q[4]}")
