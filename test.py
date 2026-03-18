@@ -1,9 +1,12 @@
 n = int(input())
-candidate = []
-for _ in range(n):
-    name = str(input())
-    if len(name) == 3:
-        candidate.append(name)
 
-candidate.sort()
-print(candidate[0])
+result = int(1e6)
+for _ in range(n):
+    a, b = map(int, input().split())
+    if a <= b:
+        result = min(result, b)
+
+if result > 1000:
+    print(-1)
+else:
+    print(result)
