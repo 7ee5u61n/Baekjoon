@@ -1,12 +1,9 @@
 n = int(input())
 
-result = int(1e6)
-for _ in range(n):
-    a, b = map(int, input().split())
-    if a <= b:
-        result = min(result, b)
+result = 0
+for i in range(n):
+    x = input().split('-')
+    if int(x[1]) <= 90:
+        result += 1
 
-if result > 1000:
-    print(-1)
-else:
-    print(result)
+print(result)
