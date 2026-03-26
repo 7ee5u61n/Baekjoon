@@ -1,8 +1,9 @@
-q = int(input())
-for _ in range(q):
-    s = str(input())
-    result = 0
-    for i in range(len(s)-2):
-        if s[i:i+3] == 'WOW':
+n = int(input())
+
+result = 0
+for i in range(1, 501):
+    for j in range(i, 501):
+        if i**2 + n == j**2:
             result += 1
-    print(result)
+
+print(result)
