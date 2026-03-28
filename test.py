@@ -1,20 +1,18 @@
 n = int(input())
+s = str(input())
 
-arr = [0]*3
-vote = list(map(int, input().split()))
+h, i, a, r, c = 0, 0, 0, 0, 0
 
-for i in vote:
-    if i == 1:
-        arr[0] += 1
-    elif i == -1:
-        arr[1] += 1
-    else:
-        arr[2] += 1
+for char in s:
+    if char == 'H':
+        h += 1
+    elif char == 'I':
+        i += 1
+    elif char == 'A':
+        a += 1
+    elif char == 'R':
+        r += 1
+    elif char == 'C':
+        c += 1    
 
-if arr[2] >= n/2:
-    print('INVALID')
-else:
-    if arr[0] > arr[1]:
-        print('APPROVED')
-    else:
-        print('REJECTED')
+print(min(h, i, a, r, c))
