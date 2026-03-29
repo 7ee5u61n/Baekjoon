@@ -1,18 +1,13 @@
 n = int(input())
-s = str(input())
+seat = [['.' for _ in range(20)] for _ in range(10)]
 
-h, i, a, r, c = 0, 0, 0, 0, 0
+for _ in range(n):
+    s = str(input())
+    row = ord(s[0]) - ord('A')
+    col = int(s[1:]) - 1
+    seat[row][col] = 'o'
 
-for char in s:
-    if char == 'H':
-        h += 1
-    elif char == 'I':
-        i += 1
-    elif char == 'A':
-        a += 1
-    elif char == 'R':
-        r += 1
-    elif char == 'C':
-        c += 1    
-
-print(min(h, i, a, r, c))
+for i in range(10):
+    for j in range(20):
+        print(seat[i][j], end='')
+    print()
