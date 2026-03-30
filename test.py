@@ -1,13 +1,14 @@
-n = int(input())
-seat = [['.' for _ in range(20)] for _ in range(10)]
+s = str(input())
 
-for _ in range(n):
-    s = str(input())
-    row = ord(s[0]) - ord('A')
-    col = int(s[1:]) - 1
-    seat[row][col] = 'o'
-
-for i in range(10):
-    for j in range(20):
-        print(seat[i][j], end='')
-    print()
+result = 0
+point = 1
+for i in range(len(s)-1):
+    if ord(s[i]) < ord(s[i+1]):
+        result += point
+        point += 1
+    else:
+        result += point
+        point = 1
+    
+result += point
+print(result)
