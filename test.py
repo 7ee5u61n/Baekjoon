@@ -1,14 +1,16 @@
-s = str(input())
+import sys
+input = sys.stdin.readline
+sys.maxsize = int(1e15)
 
-result = 0
-point = 1
-for i in range(len(s)-1):
-    if ord(s[i]) < ord(s[i+1]):
-        result += point
-        point += 1
-    else:
-        result += point
-        point = 1
-    
-result += point
-print(result)
+a, b = map(int, input().split())
+
+if a > b:
+    print(a-b-1)
+    for i in range(b+1, a):
+        print(i, end=' ')
+elif a < b:
+    print(b-a-1)
+    for i in range(a+1, b):
+        print(i, end=' ')
+else:
+    print(0)
