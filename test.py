@@ -1,16 +1,6 @@
-import sys
-input = sys.stdin.readline
-sys.maxsize = int(1e15)
-
-a, b = map(int, input().split())
-
-if a > b:
-    print(a-b-1)
-    for i in range(b+1, a):
-        print(i, end=' ')
-elif a < b:
-    print(b-a-1)
-    for i in range(a+1, b):
-        print(i, end=' ')
-else:
-    print(0)
+T = int(input())
+for _ in range(T):
+    n, m = map(int, input().split())
+    u = m*2-n
+    t = m-u
+    print(u, t)
