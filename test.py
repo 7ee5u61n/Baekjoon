@@ -1,6 +1,6 @@
-T = int(input())
-for _ in range(T):
-    n, m = map(int, input().split())
-    u = m*2-n
-    t = m-u
-    print(u, t)
+import sys
+input = sys.stdin.readline
+
+n = int(input())
+arr = set(map(int, input().split()))
+print(max(arr))
