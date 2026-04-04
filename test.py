@@ -1,6 +1,9 @@
-import sys
-input = sys.stdin.readline
+w = int(input())
 
-n = int(input())
-arr = set(map(int, input().split()))
-print(max(arr))
+s = 2
+for i in range(2, 10000):
+    if (w*2) // i == i:
+        s = i
+        break
+
+print(s*4)
