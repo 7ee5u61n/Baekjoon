@@ -1,9 +1,6 @@
-w = int(input())
+s, c, o, n = map(int, input().split())
 
-s = 2
-for i in range(2, 10000):
-    if (w*2) // i == i:
-        s = i
-        break
+sn = s+n
+co = c+o*2
 
-print(s*4)
+print(min(sn//3, co//6))
