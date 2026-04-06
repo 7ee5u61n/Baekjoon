@@ -1,6 +1,8 @@
-s, c, o, n = map(int, input().split())
+x = str(input())
 
-sn = s+n
-co = c+o*2
-
-print(min(sn//3, co//6))
+if x[0:2] == '0x':
+    print(int(x[2:], 16))
+elif x[0] == '0':
+    print(int(x[1:], 8))
+else:
+    print(int(x))
