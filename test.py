@@ -1,8 +1,22 @@
-x = str(input())
+while True:
+    try:
+        n, k = map(int, input().split())
 
-if x[0:2] == '0x':
-    print(int(x[2:], 16))
-elif x[0] == '0':
-    print(int(x[1:], 8))
-else:
-    print(int(x))
+        chicken = 0
+        stamp = 0
+        while True:
+            if stamp >= k:
+                n += stamp // k
+                stamp %= k
+            
+            if n:
+                chicken += n
+                stamp += n
+                n = 0
+            else:
+                break
+
+
+        print(chicken)
+    except EOFError:
+        break
