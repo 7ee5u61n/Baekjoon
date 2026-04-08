@@ -1,22 +1,17 @@
-while True:
-    try:
-        n, k = map(int, input().split())
+r, g, b = map(int, input().split())
 
-        chicken = 0
-        stamp = 0
-        while True:
-            if stamp >= k:
-                n += stamp // k
-                stamp %= k
-            
-            if n:
-                chicken += n
-                stamp += n
-                n = 0
-            else:
-                break
+r2 = r/255
+g2 = g/255
+b2 = b/255
+k = 1 - max(r2, g2, b2)
 
+if k == 1:
+    c = 0
+    m = 0
+    y = 0
+else:
+    c = (1 - r2 - k) / (1 - k)
+    m = (1 - g2 - k) / (1 - k)
+    y = (1 - b2 - k) / (1 - k)
 
-        print(chicken)
-    except EOFError:
-        break
+print(c, m, y, k)
