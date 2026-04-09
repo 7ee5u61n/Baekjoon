@@ -1,17 +1,12 @@
-r, g, b = map(int, input().split())
+T = int(input())
 
-r2 = r/255
-g2 = g/255
-b2 = b/255
-k = 1 - max(r2, g2, b2)
+for _ in range(T):
+    n = int(input())
+    total = 0
+    gpa = 0
+    for _ in range(n):
+        c, g = map(float, input().split())
+        total += c
+        gpa += c * g
 
-if k == 1:
-    c = 0
-    m = 0
-    y = 0
-else:
-    c = (1 - r2 - k) / (1 - k)
-    m = (1 - g2 - k) / (1 - k)
-    y = (1 - b2 - k) / (1 - k)
-
-print(c, m, y, k)
+    print(int(total), round(gpa / total, 1))
