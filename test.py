@@ -1,9 +1,9 @@
-a, b = map(int, input().split())
-
-a -= 1
-b -= 1
-
-row = abs(a//4 - b//4)
-col = abs(a%4 - b%4)
-
-print(row + col)
+n = int(input())
+while True:
+    a = int(input())
+    if a == 0:
+        break
+    if a % n:
+        print(f'{a} is NOT a multiple of {n}.')
+    else:
+        print(f'{a} is a multiple of {n}.')
