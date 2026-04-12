@@ -1,9 +1,19 @@
+k = int(input())
 n = int(input())
-while True:
-    a = int(input())
-    if a == 0:
-        break
-    if a % n:
-        print(f'{a} is NOT a multiple of {n}.')
-    else:
-        print(f'{a} is a multiple of {n}.')
+boom = False
+time = 0
+for _ in range(n):
+    t, z = map(str, input().split())
+    if boom:
+        continue
+    time += int(t)
+    if time >= 210:
+        boom = True
+        continue
+    if z == 'T':
+        k = (k+1) % 8
+
+if k:
+    print(k)
+else:
+    print(8)
