@@ -1,14 +1,12 @@
-import sys
-input = sys.stdin.readline
+n = int(input())
+size = list(map(int, input().split()))
+t, p = map(int, input().split())
 
-T = int(input())
-for _ in range(T):
-    n = int(input())
-    mx = n
-    while n != 1:
-        if n % 2:
-            n = 3 * n + 1
-        else:
-            n //= 2
-        mx = max(mx, n)
-    print(mx)
+tshirts = 0
+for i in range(6):
+    tshirts += size[i] // t
+    if size[i] % t:
+        tshirts += 1
+
+print(tshirts)
+print(n//p, n%p)
