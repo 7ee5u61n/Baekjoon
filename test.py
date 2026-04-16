@@ -1,12 +1,8 @@
-n = int(input())
-size = list(map(int, input().split()))
-t, p = map(int, input().split())
+cup = [1, 0, 0]
 
-tshirts = 0
-for i in range(6):
-    tshirts += size[i] // t
-    if size[i] % t:
-        tshirts += 1
+m = int(input())
+for _ in range(m):
+    x, y = map(int, input().split())
+    cup[x-1], cup[y-1] = cup[y-1], cup[x-1]
 
-print(tshirts)
-print(n//p, n%p)
+print(cup.index(1) + 1)
