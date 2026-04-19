@@ -1,4 +1,5 @@
-n = int(input())
+k = int(input())
+d1, d2 = map(int, input().split())
 
-for _ in range(n):
-    print('a', end='')
+h = k**2-((d1-d2)/2)**2
+print(h)
