@@ -1,9 +1,8 @@
-result = 0
-while True:
-    try:
-        s = str(input())
-        result += 1
-    except EOFError:
-        break
+n = int(input())
 
-print(result)
+for _ in range(n):
+    print('@'*n*5)
+for _ in range(n*3):
+    print('@'*n +' '*n*3+'@'*n )
+for _ in range(n):
+    print('@'*n*5)
