@@ -1,21 +1,11 @@
-n = int(input())
-arr = list(map(int, input().split()))
+a, b, c = map(int, input().split())
 
-odd = 0
-even = 0
-for i in range(n):
-    if arr[i] % 2:
-        odd += 1
-    else:
-        even += 1
-
-if n % 2:
-    if odd - even == 1:
-        print(1)
-    else:
-        print(0)
+if a == 0:
+    a = c**2 - b
+    print(int(a))
+elif b == 0:
+    b = c**2 - a
+    print(int(b))
 else:
-    if odd == even:
-        print(1)
-    else:
-        print(0)
+    c = (a + b)**0.5
+    print(int(c))
