@@ -1,9 +1,14 @@
-n = int(input())
-result = -1
-for _ in range(n):
-    a, b, c = map(int, input().split())
-    if a+b+c >= 512:
-        if result == -1 or result > a+b+c:
-            result = a+b+c
+n, k, t = map(int, input().split())
+d = list(map(int, input().split()))
+t = [t]
+result = 0
+for i in range(n):
+    if t[i] > k:
+        t.append(t[i]+d[i]-abs(t[i]-k))
+    elif t[i] < k:
+        t.append(t[i]+d[i]+abs(t[i]-k))
+    else:
+        t.append(t[i]+d[i])
+    result += abs(t[-1]-k)
 
 print(result)
