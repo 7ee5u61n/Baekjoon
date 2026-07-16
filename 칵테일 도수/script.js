@@ -7,8 +7,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // 초기 예시 데이터 셋업
     const initialData = [
-        { name: '필스너 우르켈', vol: 330, abv: 4.4 },
-        { name: '위스키', vol: 30, abv: 40 }
+        {},
+        {}
     ];
 
     // 재료 입력 행 추가 함수
